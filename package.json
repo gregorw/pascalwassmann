@@ -9,7 +9,8 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
-    "deploy": "nuxt generate && push-dir --dir=dist --branch=gh-pages --cleanup",
+    "push": "push-dir --dir=dist --branch=gh-pages --cleanup",
+    "deploy": "nuxt generate && yarn run push",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "fix": "eslint --ext .js,.vue --ignore-path .gitignore . --fix",
     "precommit": "npm run lint"
