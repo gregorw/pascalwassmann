@@ -1,6 +1,6 @@
 <template>
   <div>
-    <nuxt />
+    <nuxt/>
   </div>
 </template>
 
@@ -22,5 +22,6 @@ html {
 *:after {
   box-sizing: border-box;
   margin: 0;
+  font-size: 100%;
 }
 </style>
