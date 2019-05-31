@@ -15,8 +15,8 @@ $ yarn run dev
 $ yarn run build
 $ yarn start
 
-# generate static project
-$ yarn run generate
+# generate static project and deploy to Github Pages
+$ yarn run deploy
 ```
 
 For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).
