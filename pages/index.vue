@@ -4,8 +4,7 @@
       <h1>Pascal Wassmann</h1>
       <h2>Architekt MSc ETH SIA</h2>
       <address>
-        T +41 43 534 18 18
-        <br>M +41 76 482 27 32
+        M +41 76 482 27 32
         <br>
         <a href="mailto:info@pascalwassmann.ch">info@pascalwassmann.ch</a>
         <br>Schaffhauserstrasse 272
@@ -28,6 +27,7 @@
 
 address {
   font-style: normal;
+  font-variant-numeric: tabular-nums;
   margin-left: 7.9rem;
   margin-top: 4rem;
 
@@ -35,5 +35,11 @@ address {
     text-decoration: none;
     color: inherit;
   }
+}
+
+h1,
+h2,
+h3 {
+  font-weight: normal;
 }
 </style>
