@@ -1,4 +1,11 @@
 @font-face {
   font-family: 'Messina Sans';
   src: url('~static/fonts/MessinaSansWeb-Regular.woff');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Messina Sans';
+  src: url('~static/fonts/MessinaSansWeb-Bold.woff');
+  font-weight: bold;
 }
