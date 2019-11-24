@@ -4,6 +4,7 @@
   "description": "Architect",
   "author": "Gregor Wassmann",
   "private": true,
+  "license": "UNLICENSED",
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
@@ -16,26 +17,26 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
-    "@nuxtjs/pwa": "^2.6.0",
-    "cross-env": "^5.2.0",
+    "@nuxtjs/pwa": "^3.0.0-beta.19",
+    "cross-env": "^6.0.3",
     "node-sass": "^4.12.0",
     "nuxt": "^2.4.0",
     "push-dir": "^0.4.1",
-    "sass-loader": "^7.1.0"
+    "sass-loader": "^8.0.0"
   },
   "devDependencies": {
-    "@nuxtjs/eslint-config": "^0.0.1",
+    "@nuxtjs/eslint-config": "^1.1.2",
     "babel-eslint": "^10.0.1",
-    "eslint": "^5.15.1",
+    "eslint": "^6.7.0",
     "eslint-config-standard": ">=12.0.0",
-    "eslint-loader": "^2.1.2",
+    "eslint-loader": "^3.0.2",
     "eslint-plugin-import": ">=2.16.0",
     "eslint-plugin-jest": ">=22.3.0",
     "eslint-plugin-node": ">=8.0.1",
     "eslint-plugin-nuxt": ">=0.4.2",
     "eslint-plugin-promise": ">=4.0.1",
     "eslint-plugin-standard": ">=4.0.0",
-    "eslint-plugin-vue": "^5.2.2",
-    "nodemon": "^1.18.9"
+    "eslint-plugin-vue": "^6.0.1",
+    "nodemon": "^2.0.1"
   }
 }
