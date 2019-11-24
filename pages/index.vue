@@ -4,16 +4,11 @@
       <h1>Pascal Wassmann</h1>
       <h2>Architekten GmbH</h2>
       <address>
-        T <a href="tel:+41 43 534 18 18">+41 43 534 18 18</a>
-        <br>
-        <br>
-        <br>
-        <br>
-        M <a href="tel:+41 76 482 27 32">+41 76 482 27 32</a>
-        <br>
-        <a href="mailto:info@pascalwassmann.ch">info@pascalwassmann.ch</a>
-        <br>Schaffhauserstrasse 272
-        <br>8057 Zürich
+        T <a href="tel:+41 43 534 18 18">+41 43 534 18 18</a><br>
+        M <a href="tel:+41 76 482 27 32">+41 76 482 27 32</a><br>
+        <a href="mailto:info@pascalwassmann.ch">info@pascalwassmann.ch</a><br>
+        Schaffhauserstrasse 272<br>
+        8057 Zürich
       </address>
     </div>
   </section>
