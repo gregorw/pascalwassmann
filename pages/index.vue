@@ -1,5 +1,6 @@
 <template>
   <section class="container">
+    <Projects :projects="projects" />
     <div>
       <h1>Pascal Wassmann</h1>
       <h2>Architekten GmbH</h2>
@@ -47,3 +48,30 @@ h2 {
   font-weight: bold;
 }
 </style>
+
+<script>
+import Projects from '../components/Projects'
+import { createClient } from '../plugins/contentful'
+
+const contentfulClient = createClient()
+
+export default {
+  components: {
+    Projects
+  },
+  asyncData ({ env }) {
+    return Promise.all([
+      // fetch all blog posts sorted by creation date
+      contentfulClient.getEntries({
+        'content_type': 'project'
+      })
+    ]).then(([projects]) => {
+      // return data that should be available
+      // in the template
+      return {
+        projects: projects.items
+      }
+    }).catch(console.error)
+  }
+}
+</script>

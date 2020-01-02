@@ -1,5 +1,5 @@
 import pkg from './package'
-import contentful from './.contentful.json'
+import contentful from './contentful.json'
 
 export default {
   mode: 'universal',
@@ -59,6 +59,10 @@ export default {
           loader: 'eslint-loader',
           exclude: /(node_modules)/
         })
+      }
+
+      if (ctx.isDev) {
+        config.devtool = ctx.isClient ? 'source-map' : 'inline-source-map'
       }
     }
   }
