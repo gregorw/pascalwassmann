@@ -10,7 +10,6 @@ import { createClient } from '../../plugins/contentful'
 const contentfulClient = createClient()
 
 export default {
-  name: 'Index',
   asyncData ({ env, params }) {
     return contentfulClient.getEntries({
       'content_type': 'project',

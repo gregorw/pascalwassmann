@@ -65,13 +65,13 @@ export default {
       contentfulClient.getEntries({
         'content_type': 'project'
       })
-    ]).then(([projects]) => {
+    ]).then(([response]) => {
       // return data that should be available
       // in the template
       return {
-        projects: projects.items
+        projects: response.items
       }
-    }).catch(console.error)
+    })
   }
 }
 </script>
