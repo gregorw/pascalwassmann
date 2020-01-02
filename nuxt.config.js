@@ -1,7 +1,14 @@
 import pkg from './package'
+import contentful from './.contentful.json'
 
 export default {
   mode: 'universal',
+
+  env: {
+    CONTENTFUL_SPACE_ID: contentful.spaceId,
+    CONTENTFUL_ACCESS_TOKEN: contentful.accessToken,
+    CONTENTFUL_ENVIRONMENT: contentful.environment
+  },
 
   /*
    ** Headers of the page
@@ -43,7 +50,7 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {
+    extend (config, ctx) {
       // Run ESLint on save
       if (ctx.isDev && ctx.isClient) {
         config.module.rules.push({
