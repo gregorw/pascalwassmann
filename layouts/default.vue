@@ -28,6 +28,9 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
+
+  @media only screen and (max-width: 1000px) { font-size: 14px; }
+  @media only screen and (max-width: 600px) { font-size: 12px; }
 }
 
 main {
