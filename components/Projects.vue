@@ -1,12 +1,12 @@
 <template>
   <nav class="projects">
-    <ul role="menu">
-      <li v-for="(project, index) in projects" :key="index">
-        <nuxt-link :to="'/' + project.fields.slug" role="menuitem">
+    <ol role="menu">
+      <li v-for="project in projects" :key="project.id">
+        <nuxt-link :to="'/' + project.fields.slug" role="menuitem" class="project-link">
           {{ project.fields.name }}
         </nuxt-link>
       </li>
-    </ul>
+    </ol>
   </nav>
 </template>
 
@@ -22,6 +22,11 @@ export default {
 }
 </script>
 
-<style lang="scss">
-  nav { display: block; }
+<style lang="sass">
+  .project-link
+    font-weight: bold
+    font-size: 2rem
+
+  nav.projects
+    padding-top: 1rem
 </style>

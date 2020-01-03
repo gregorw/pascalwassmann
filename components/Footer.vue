@@ -1,11 +1,13 @@
 <template>
-  <footer>
-    <span>{{ brand }}</span>
+  <footer class="navigation">
+    <nuxt-link to="/">
+      {{ brand }}
+    </nuxt-link>
     <nav>
       <ol>
-        <li>
-          <nuxt-link to="/info">
-            Info
+        <li v-for="item in items" :key="item.link">
+          <nuxt-link :to="item.link">
+            {{ item.text }}
           </nuxt-link>
         </li>
       </ol>
@@ -18,16 +20,24 @@ export default {
   name: 'Footer',
   data () {
     return {
-      brand: 'Pascal Wassmann'
+      brand: 'Pascal Wassmann',
+      items: [{
+        text: 'Info',
+        link: '/info'
+      }]
     }
   }
 }
 </script>
 
 <style lang="sass">
-  footer
-    display: block
+nav,
+li
+  display: inline-block
 
-  ol
-    list-style-type: none
+nav
+  float: right
+
+footer.navigation
+  padding: 1rem 0
 </style>

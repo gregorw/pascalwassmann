@@ -1,9 +1,9 @@
 <template>
   <div class="fullscreen">
-    <main>
+    <main class="grid">
       <nuxt />
     </main>
-    <Footer />
+    <Footer class="grid" />
   </div>
 </template>
 
@@ -36,13 +36,20 @@ body {
 
 .fullscreen {
   display: flex;
-  width: 100vw;
   min-height: 100vh;
+  width: 100vw;
   flex-direction: column;
 
   main {
     flex: auto;
   }
+}
+
+.grid {
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70rem;
 }
 
 *,
@@ -52,4 +59,16 @@ body {
   margin: 0;
   font-size: 100%;
 }
+
+ol,
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
 </style>
