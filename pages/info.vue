@@ -23,11 +23,6 @@ export default {
         renderedContent: md.render(info.fields.content)
       }
     })
-  },
-  computed: {
-    content: () => {
-      return md.render(this.info.fields.content)
-    }
   }
 }
 </script>

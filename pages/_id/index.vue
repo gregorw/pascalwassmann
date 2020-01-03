@@ -2,19 +2,19 @@
   <div class="page-component">
     <a @click="$router.go(-1)">Go back to overview</a>
     <h1>{{ project.fields.name }}</h1>
-    <ContentfulImage v-for="image in images" :key="image.id" :image="image" />
+    <ResponsiveImage v-for="image in images" :key="image.id" :image="image" />
   </div>
 </template>
 
 <script>
 import { createClient } from '../../plugins/contentful'
-import ContentfulImage from '../../components/ContentfulImage'
+import ResponsiveImage from '../../components/ResponsiveImage'
 
 const contentfulClient = createClient()
 
 export default {
   components: {
-    ContentfulImage
+    ResponsiveImage
   },
   asyncData ({ env, params }) {
     return contentfulClient.getEntries({
