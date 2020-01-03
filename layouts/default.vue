@@ -1,8 +1,21 @@
 <template>
-  <div>
-    <nuxt />
+  <div class="fullscreen">
+    <main>
+      <nuxt />
+    </main>
+    <Footer />
   </div>
 </template>
+
+<script>
+import Footer from '~/components/Footer.vue'
+
+export default {
+  components: {
+    Footer
+  }
+}
+</script>
 
 <style lang="scss">
 @import '~/assets/fonts.css';
@@ -15,6 +28,21 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
+}
+
+body {
+  display: flex;
+}
+
+.fullscreen {
+  display: flex;
+  width: 100vw;
+  min-height: 100vh;
+  flex-direction: column;
+
+  main {
+    flex: auto;
+  }
 }
 
 *,

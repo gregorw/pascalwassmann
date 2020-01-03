@@ -2,7 +2,7 @@
   <div class="page-component">
     <a @click="$router.go(-1)">Go back to overview</a>
     <h1>{{ info.fields.title }}</h1>
-    <div v-html="content" />
+    <div v-html="renderedContent" />
   </div>
 </template>
 
@@ -20,7 +20,7 @@ export default {
       const info = response.items[0]
       return {
         info,
-        content: md.render(info.fields.content)
+        renderedContent: md.render(info.fields.content)
       }
     })
   },
