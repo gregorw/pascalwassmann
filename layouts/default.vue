@@ -1,9 +1,9 @@
 <template>
-  <div class="fullscreen">
+  <div>
     <main class="grid">
       <nuxt />
     </main>
-    <Footer class="grid" />
+    <Footer class="sticky" />
   </div>
 </template>
 
@@ -30,19 +30,8 @@ html {
   box-sizing: border-box;
 }
 
-body {
-  display: flex;
-}
-
-.fullscreen {
-  display: flex;
-  min-height: 100vh;
-  width: 100vw;
-  flex-direction: column;
-
-  main {
-    flex: auto;
-  }
+main {
+  padding-bottom: 5rem;
 }
 
 .grid {
@@ -52,6 +41,14 @@ body {
   width: 60rem;
 }
 
+.sticky {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: white;
+}
+
+// Resets
 *,
 *:before,
 *:after {
@@ -70,5 +67,4 @@ a {
   text-decoration: none;
   color: black;
 }
-
 </style>

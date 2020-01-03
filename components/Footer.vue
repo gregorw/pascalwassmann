@@ -1,17 +1,19 @@
 <template>
   <footer class="navigation">
-    <nuxt-link to="/">
-      {{ brand }}
-    </nuxt-link>
-    <nav>
-      <ol>
-        <li v-for="item in items" :key="item.link" class="inline">
-          <nuxt-link :to="item.link">
-            {{ item.text }}
-          </nuxt-link>
-        </li>
-      </ol>
-    </nav>
+    <div class="grid">
+      <nuxt-link to="/">
+        {{ brand }}
+      </nuxt-link>
+      <nav>
+        <ol>
+          <li v-for="item in items" :key="item.link" class="inline">
+            <nuxt-link :to="item.link">
+              {{ item.text }}
+            </nuxt-link>
+          </li>
+        </ol>
+      </nav>
+    </div>
   </footer>
 </template>
 
