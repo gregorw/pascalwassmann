@@ -42,7 +42,7 @@ main {
   max-width: 90%;
   margin-left: auto;
   margin-right: auto;
-  width: 60rem;
+  width: 55rem;
 }
 
 .sticky {
