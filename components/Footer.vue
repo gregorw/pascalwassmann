@@ -33,11 +33,13 @@ export default {
 </script>
 
 <style lang="sass">
+@import '~/assets/settings.scss'
+
 .inline
   display: inline-block
 
 footer.navigation
-  padding: 1rem 0
+  padding: $leading 0
 
   nav
     float: right

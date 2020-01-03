@@ -19,6 +19,7 @@ export default {
 
 <style lang="scss">
 @import '~/assets/fonts.css';
+@import '~/assets/settings.scss';
 
 html {
   font-family: 'Messina Sans', -apple-system, sans-serif;
@@ -72,5 +73,22 @@ a {
 }
 
 // Typography
-h1 { font-size: 2rem; margin-bottom: 2rem; }
+html { line-height: $line-height; }
+h1 { font-size: 2rem; margin-bottom: 2 * $leading; }
+
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol,
+img,
+dl {
+  margin-bottom: $leading;
+}
+
+*:last-child {
+  margin-bottom: 0;
+}
 </style>
