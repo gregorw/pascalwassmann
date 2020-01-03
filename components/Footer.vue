@@ -5,7 +5,7 @@
     </nuxt-link>
     <nav>
       <ol>
-        <li v-for="item in items" :key="item.link">
+        <li v-for="item in items" :key="item.link" class="inline">
           <nuxt-link :to="item.link">
             {{ item.text }}
           </nuxt-link>
@@ -31,13 +31,12 @@ export default {
 </script>
 
 <style lang="sass">
-nav,
-li
+.inline
   display: inline-block
-
-nav
-  float: right
 
 footer.navigation
   padding: 1rem 0
+
+  nav
+    float: right
 </style>
