@@ -49,7 +49,7 @@ body {
   max-width: 90%;
   margin-left: auto;
   margin-right: auto;
-  width: 70rem;
+  width: 60rem;
 }
 
 *,

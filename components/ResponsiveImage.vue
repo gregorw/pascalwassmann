@@ -1,5 +1,5 @@
 <template>
-  <img :key="image.id" :src="url" class="cld-responsive">
+  <img :key="image.id" :data-src="responsive_url" :src="url" class="cld-responsive">
 </template>
 
 <script>
@@ -17,18 +17,26 @@ export default {
   computed: {
     url () {
       return cl.url(this.secure_url, {
-        type: 'fetch', width: '800', crop: 'scale', fetch_format: 'auto'
+        type: 'fetch', width: '200', crop: 'scale', fetch_format: 'auto'
+      })
+    },
+    responsive_url () {
+      return cl.url(this.secure_url, {
+        type: 'fetch', width: 'auto', dpr: 'auto', responsive: 'true', crop: 'scale', fetch_format: 'auto'
       })
     },
     secure_url () {
       return `https:${this.image.fields.file.url}`
     }
+  },
+  mounted: () => {
+    cl.responsive()
   }
 }
 </script>
 
 <style lang="sass">
 img
-  max-width: 100%
+  width: 100%
 
 </style>
