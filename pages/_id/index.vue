@@ -12,6 +12,7 @@
       <Definition term="Zusammenarbeit" :text="project.fields.zusammenarbeit" />
       <Definition term="Auftrageber" :text="project.fields.auftraggeber" />
       <Definition term="Preis" :text="project.fields.preis" />
+      <Definition term="Datum" :text="project.fields.datum" />
     </dl>
     <ResponsiveImage v-for="image in images" :key="image.id" :image="image" />
     <div v-html="fulltext" />
