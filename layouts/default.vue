@@ -70,4 +70,7 @@ a {
   text-decoration: none;
   color: black;
 }
+
+// Typography
+h1 { font-size: 2rem; margin-bottom: 2rem; }
 </style>

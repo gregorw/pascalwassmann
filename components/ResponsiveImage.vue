@@ -38,5 +38,6 @@ export default {
 <style lang="sass">
 img
   width: 100%
+  margin-bottom: 2rem
 
 </style>
