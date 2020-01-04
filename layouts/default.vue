@@ -23,7 +23,7 @@ export default {
 
 html {
   font-family: 'Messina Sans', -apple-system, sans-serif;
-  font-size: percentage(18 / 16);
+  font-size: percentage(20 / 16);
   text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -31,8 +31,8 @@ html {
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
 
-  @media only screen and (max-width: 1000px) { font-size: percentage(16 / 16); }
-  @media only screen and (max-width: 600px) { font-size: percentage(14 / 16); }
+  @media only screen and (max-width: 1000px) { font-size: percentage(18 / 16); }
+  @media only screen and (max-width: 600px) { font-size: percentage(16 / 16); }
 }
 
 main { padding-bottom: 3 * $leading; }
@@ -43,7 +43,7 @@ main { padding-bottom: 3 * $leading; }
   max-width: 90%;
   margin-left: auto;
   margin-right: auto;
-  width: 55rem;
+  width: 46rem;
 }
 
 .padded {

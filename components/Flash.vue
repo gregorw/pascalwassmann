@@ -1,6 +1,6 @@
 <template>
   <aside class="flash padded top-line">
-    <p>{{ date | dateFormat }}<br>{{ flash.fields.description }}</p>
+    <p>{{ date | dateFormat }} – {{ flash.fields.description }}</p>
   </aside>
 </template>
 

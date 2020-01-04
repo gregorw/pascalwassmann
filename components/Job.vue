@@ -1,7 +1,7 @@
 <template>
   <nuxt-link :to="'/jobs/' + job.fields.slug" class="job-link padded top-line">
-    <h2>{{ job.fields.initiation }} {{ job.fields.title }}</h2>
-    <p>{{ job.fields.subtitle }} →</p>
+    {{ job.fields.initiation }} {{ job.fields.title }} {{ job.fields.subtitle }}
+    <span class="arrow"> → </span>
   </nuxt-link>
 </template>
 
@@ -20,9 +20,12 @@ export default {
 @import '~/assets/settings.scss'
 
 .job-link
+  display: block
+
   h2
     font-weight: normal
     margin-bottom: 0
 
-  display: block
+  .arrow
+    float: right
 </style>
