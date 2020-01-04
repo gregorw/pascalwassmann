@@ -10,7 +10,6 @@
 a.back
   font-size: 2rem
   text-align: right
-  display: block
   cursor: pointer
-  margin-bottom: $leading
+  float: right
 </style>
