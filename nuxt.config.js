@@ -1,4 +1,8 @@
 import pkg from './package'
+import { createClient } from './plugins/contentful'
+require('dotenv').config()
+
+const contentful = createClient()
 
 export default {
   mode: 'universal',
@@ -63,8 +67,18 @@ export default {
   },
 
   generate: {
-    routes: [
-      '/projekte/alterswohnungen-riehen'
-    ]
+    routes () {
+      return Promise.all([
+        contentful.getEntries({ 'content_type': 'project' }),
+        contentful.getEntries({ 'content_type': 'page' }),
+        contentful.getEntries({ 'content_type': 'job' })
+      ]).then(([projects, pages, jobs]) => {
+        return [
+          ...projects.items.map((project) => { return `/projekte/${project.fields.slug}` }),
+          ...pages.items.map((page) => { return `/${page.fields.slug}` }),
+          ...jobs.items.map((job) => { return `/jobs/${job.fields.slug}` })
+        ]
+      })
+    }
   }
 }
