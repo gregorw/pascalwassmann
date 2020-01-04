@@ -60,5 +60,11 @@ export default {
         config.devtool = ctx.isClient ? 'source-map' : 'inline-source-map'
       }
     }
+  },
+
+  generate: {
+    routes: [
+      '/projekte/alterswohnungen-riehen'
+    ]
   }
 }
