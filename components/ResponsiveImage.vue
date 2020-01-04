@@ -37,7 +37,9 @@ export default {
 
 <style lang="sass">
 img
-  width: 100%
-  margin-bottom: 2rem
+  max-width: 100%
+  margin: 0 auto 2rem
+  display: block
+  max-height: 90vh
 
 </style>
