@@ -18,8 +18,9 @@ export default {
 </script>
 
 <style lang="scss">
-@import '~/assets/fonts.css';
-@import '~/assets/settings.scss';
+@import '~/assets/fonts';
+@import '~/assets/settings';
+@import '~/assets/utilities';
 
 html {
   font-family: 'Messina Sans', -apple-system, sans-serif;
@@ -35,24 +36,9 @@ html {
   @media only screen and (max-width: 600px) { font-size: percentage(16 / 16); }
 }
 
-main { padding-bottom: 3 * $leading; }
+main { padding-bottom: $footer-height; }
 
 .page { padding: $leading 0; }
-
-.grid {
-  max-width: 90%;
-  margin-left: auto;
-  margin-right: auto;
-  width: 46rem;
-}
-
-.padded {
-  padding: $leading 0
-}
-
-.top-line {
-  border-top: 1px solid black
-}
 
 .sticky {
   position: fixed;

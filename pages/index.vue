@@ -39,12 +39,12 @@ export default {
 </script>
 
 <style lang="sass">
-@import '~/assets/settings.scss'
+@import '~/assets/settings'
 
 .full-height
   display: flex
   flex-direction: column
-  min-height: calc(100vh - #{3 * $leading})
+  min-height: calc(100vh - #{$footer-height})
 
 .flex-height
   flex: 1

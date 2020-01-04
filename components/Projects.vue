@@ -23,7 +23,7 @@ export default {
 </script>
 
 <style lang="sass">
-  @import '~/assets/settings.scss'
+  @import '~/assets/settings'
 
   .project-link
     font-weight: bold

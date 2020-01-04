@@ -1,6 +1,6 @@
 <template>
   <footer class="navigation">
-    <div class="grid padded top-line">
+    <div class="content">
       <nuxt-link to="/">
         {{ brand }}
       </nuxt-link>
@@ -33,7 +33,8 @@ export default {
 </script>
 
 <style lang="sass">
-@import '~/assets/settings.scss'
+@import '~/assets/settings'
+@import '~/assets/utilities'
 
 .inline
   display: inline-block
@@ -41,4 +42,10 @@ export default {
 footer.navigation
   nav
     float: right
+
+  .content
+    @extend .grid
+    @extend .top-line
+    padding-top: $footer-padding-top
+    padding-bottom: $footer-padding-bottom
 </style>
