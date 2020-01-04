@@ -1,5 +1,5 @@
 <template>
-  <aside class="flash">
+  <aside class="flash padded top-line">
     <p>{{ date | dateFormat }}<br>{{ flash.fields.description }}</p>
   </aside>
 </template>
@@ -24,10 +24,3 @@ export default {
   }
 }
 </script>
-
-<style lang="sass">
-@import '~/assets/settings.scss'
-
-.flash
-  margin-bottom: $leading
-</style>

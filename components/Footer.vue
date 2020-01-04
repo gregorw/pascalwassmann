@@ -1,6 +1,6 @@
 <template>
   <footer class="navigation">
-    <div class="grid">
+    <div class="grid padded top-line">
       <nuxt-link to="/">
         {{ brand }}
       </nuxt-link>
@@ -39,8 +39,6 @@ export default {
   display: inline-block
 
 footer.navigation
-  padding: $leading 0
-
   nav
     float: right
 </style>

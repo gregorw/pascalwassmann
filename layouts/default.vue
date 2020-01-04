@@ -35,7 +35,7 @@ html {
   @media only screen and (max-width: 600px) { font-size: percentage(14 / 16); }
 }
 
-main { padding-bottom: 5rem; }
+main { padding-bottom: 3 * $leading; }
 
 .page { padding-top: $leading; }
 
@@ -44,6 +44,14 @@ main { padding-bottom: 5rem; }
   margin-left: auto;
   margin-right: auto;
   width: 55rem;
+}
+
+.padded {
+  padding: $leading 0
+}
+
+.top-line {
+  border-top: 1px solid black
 }
 
 .sticky {

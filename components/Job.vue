@@ -1,5 +1,5 @@
 <template>
-  <nuxt-link :to="'/jobs/' + job.fields.slug" class="job-link">
+  <nuxt-link :to="'/jobs/' + job.fields.slug" class="job-link padded top-line">
     <h2>{{ job.fields.initiation }} {{ job.fields.title }}</h2>
     <p>{{ job.fields.subtitle }} →</p>
   </nuxt-link>
@@ -24,6 +24,5 @@ export default {
     font-weight: normal
     margin-bottom: 0
 
-  margin-bottom: $leading
   display: block
 </style>

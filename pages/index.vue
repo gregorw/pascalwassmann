@@ -1,6 +1,6 @@
 <template>
-  <section>
-    <Projects :projects="projects" />
+  <section class="full-height">
+    <Projects :projects="projects" class="flex-height" />
     <aside class="flash-n-jobs">
       <Flash v-for="flash in news" :key="flash.id" :flash="flash" />
       <Job v-for="job in jobs" :key="job.id" :job="job" />
@@ -41,7 +41,12 @@ export default {
 <style lang="sass">
 @import '~/assets/settings.scss'
 
-.flash-n-jobs
-  position: fixed
-  bottom: 3 * $leading
+.full-height
+  display: flex
+  flex-direction: column
+  min-height: calc(100vh - #{3 * $leading})
+
+.flex-height
+  flex: 1
+
 </style>
