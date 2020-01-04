@@ -1,6 +1,6 @@
 <template>
   <aside class="flash">
-    <h2>{{ date | dateFormat('DD. MMMM YYYY') }} {{ flash.fields.title }}</h2>
+    <p>{{ date | dateFormat('DD.MM.YYYY') }} – {{ flash.fields.title }}</p>
   </aside>
 </template>
 
@@ -24,3 +24,10 @@ export default {
   }
 }
 </script>
+
+<style lang="sass">
+@import '~/assets/settings.scss'
+
+.flash
+  margin-bottom: $leading
+</style>
