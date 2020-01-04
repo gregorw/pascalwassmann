@@ -1,6 +1,8 @@
 <template>
   <section>
     <Projects :projects="projects" />
+    <p v-for="flash in news" :key="flash.id">{{ flash.fields.title }}</p>
+    <p v-for="job in jobs" :key="job.id">{{ job.fields.title }}</p>
   </section>
 </template>
 
@@ -32,7 +34,7 @@ h2 {
 import Projects from '../components/Projects'
 import { createClient } from '../plugins/contentful'
 
-const contentfulClient = createClient()
+const contentful = createClient()
 
 export default {
   components: {
@@ -41,14 +43,16 @@ export default {
   asyncData ({ env }) {
     return Promise.all([
       // fetch all blog posts sorted by creation date
-      contentfulClient.getEntries({
-        'content_type': 'project'
-      })
-    ]).then(([response]) => {
+      contentful.getEntries({ 'content_type': 'project' }),
+      contentful.getEntries({ 'content_type': 'newsflash' }),
+      contentful.getEntries({ 'content_type': 'job' })
+    ]).then(([projects, news, jobs]) => {
       // return data that should be available
       // in the template
       return {
-        projects: response.items
+        projects: projects.items,
+        news: news.items,
+        jobs: jobs.items
       }
     })
   }
