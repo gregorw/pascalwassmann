@@ -31,8 +31,8 @@ h2 {
 </style>
 
 <script>
-import Projects from '../components/Projects'
-import { createClient } from '../plugins/contentful'
+import Projects from '~/components/Projects'
+import { createClient } from '~/plugins/contentful'
 
 const contentful = createClient()
 

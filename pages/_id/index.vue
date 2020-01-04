@@ -21,10 +21,10 @@
 
 <script>
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer'
-import { createClient } from '../../plugins/contentful'
-import ResponsiveImage from '../../components/ResponsiveImage'
-import Back from '../../components/Back'
-import Definition from '../../components/Definition'
+import { createClient } from '~/plugins/contentful'
+import ResponsiveImage from '~/components/ResponsiveImage'
+import Back from '~/components/Back'
+import Definition from '~/components/Definition'
 
 const contentfulClient = createClient()
 

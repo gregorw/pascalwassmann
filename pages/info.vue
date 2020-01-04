@@ -7,8 +7,8 @@
 </template>
 
 <script>
-import { createClient } from '../plugins/contentful'
-import Back from '../components/Back'
+import { createClient } from '~/plugins/contentful'
+import Back from '~/components/Back'
 const md = require('markdown-it')({ breaks: true })
 const contentfulClient = createClient()
 
