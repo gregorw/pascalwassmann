@@ -1,18 +1,17 @@
 <template>
   <div class="page">
     <Back />
-    <h1>{{ project.fields.name }}</h1>
+    <h1>{{ name }}</h1>
     <dl>
-      <Definition term="Verfahren" :text="project.fields.verfahren" />
-      <Definition term="Bauingenieur" :text="project.fields.bauingenieur" />
-      <Definition term="Landschaftsarchitekt" :text="project.fields.landschaftsarchitekt" />
-      <Definition term="Statik" :text="project.fields.statik" />
-      <Definition term="Gebäudetechnik" :text="project.fields.gebaudetechnik" />
-      <Definition term="Bauphysik" :text="project.fields.bauphysik" />
-      <Definition term="Zusammenarbeit" :text="project.fields.zusammenarbeit" />
-      <Definition term="Auftrageber" :text="project.fields.auftraggeber" />
-      <Definition term="Preis" :text="project.fields.preis" />
-      <Definition term="Datum" :text="project.fields.datum" />
+      <Definition term="Verfahren" :text="proceeding_and_rank" />
+      <Definition term="Bauingenieur" :text="bauingenieur" />
+      <Definition term="Landschaftsarchitekt" :text="landschaftsarchitekt" />
+      <Definition term="Statik" :text="statik" />
+      <Definition term="Gebäudetechnik" :text="gebaudetechnik" />
+      <Definition term="Bauphysik" :text="bauphysik" />
+      <Definition term="Zusammenarbeit" :text="zusammenarbeit" />
+      <Definition term="Auftrageber" :text="auftraggeber" />
+      <Definition term="Datum" :text="datum" />
     </dl>
     <ResponsiveImage v-for="image in images" :key="image.id" :image="image" />
     <div v-html="fulltext" />
@@ -39,17 +38,15 @@ export default {
       'content_type': 'project',
       'fields.slug': params.id
     }).then((response) => {
-      const project = response.items[0]
-      const images = project.fields.images
-      return {
-        project,
-        images
-      }
+      return response.items[0].fields
     })
   },
   computed: {
     fulltext () {
-      return documentToHtmlString(this.project.fields.richText)
+      return documentToHtmlString(this.richText)
+    },
+    proceeding_and_rank () {
+      return `${this.verfahren}, ${this.preis}`
     }
   }
 }

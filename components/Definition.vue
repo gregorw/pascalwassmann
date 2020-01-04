@@ -1,8 +1,16 @@
+<template>
+  <dd v-if="isPresent">
+    {{ term }}: {{ text | dateFormat }}
+  </dd>
+</template>
+
 <script>
 import dateFormat from '~/custom/dateFormat'
 
 export default {
-  functional: true,
+  filters: {
+    dateFormat
+  },
   props: {
     term: {
       type: String,
@@ -13,22 +21,10 @@ export default {
       default: ''
     }
   },
-  render (createElement, context) {
-    let list = []
-    if (context.props.text.length > 0) {
-      list = [
-        createElement('dt', context.props.term),
-        createElement('dd', dateFormat(context.props.text))
-      ]
+  computed: {
+    isPresent () {
+      return this.text.length > 0
     }
-    return list
   }
 }
 </script>
-<style lang="sass">
-dt
-  float: left
-
-dd
-  padding-left: 12em
-</style>
