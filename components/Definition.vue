@@ -1,5 +1,5 @@
 <script>
-import moment from 'moment'
+import dateFormat from '~/custom/dateFormat'
 
 export default {
   functional: true,
@@ -16,14 +16,9 @@ export default {
   render (createElement, context) {
     let list = []
     if (context.props.text.length > 0) {
-      let value = context.props.text
-      const date = moment(value)
-      if (date.isValid()) {
-        value = date.locale('de').format('MMMM YYYY')
-      }
       list = [
         createElement('dt', context.props.term),
-        createElement('dd', value)
+        createElement('dd', dateFormat(context.props.text))
       ]
     }
     return list
