@@ -24,9 +24,9 @@ export default {
   },
   asyncData ({ env }) {
     return Promise.all([
-      contentful.getEntries({ 'content_type': 'project' }),
+      contentful.getEntries({ 'content_type': 'project', 'order': '-fields.projektnummer' }),
       contentful.getEntries({ 'content_type': 'newsflash' }),
-      contentful.getEntries({ 'content_type': 'job' })
+      contentful.getEntries({ 'content_type': 'job', 'order': 'fields.priority' })
     ]).then(([projects, news, jobs]) => {
       return {
         projects: projects.items,
