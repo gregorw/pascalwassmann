@@ -37,7 +37,7 @@ html {
 
 main { padding-bottom: 3 * $leading; }
 
-.page { padding-top: $leading; }
+.page { padding: $leading 0; }
 
 .grid {
   max-width: 90%;

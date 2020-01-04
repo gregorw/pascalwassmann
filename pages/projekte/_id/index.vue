@@ -14,12 +14,12 @@
       <Definition term="Datum" :text="datum" />
     </dl>
     <ResponsiveImage v-for="image in images" :key="image.id" :image="image" />
-    <div v-html="fulltext" />
+    <div v-html="renderedAbstract" />
   </div>
 </template>
 
 <script>
-import { documentToHtmlString } from '@contentful/rich-text-html-renderer'
+import markdown from '~/custom/markdown'
 import { createClient } from '~/plugins/contentful'
 import ResponsiveImage from '~/components/ResponsiveImage'
 import Back from '~/components/Back'
@@ -42,8 +42,8 @@ export default {
     })
   },
   computed: {
-    fulltext () {
-      return documentToHtmlString(this.richText)
+    renderedAbstract () {
+      return markdown(this.abstract)
     },
     proceeding_and_rank () {
       return `${this.verfahren}, ${this.preis}`
