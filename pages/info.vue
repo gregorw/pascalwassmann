@@ -9,7 +9,7 @@
 <script>
 import { createClient } from '~/plugins/contentful'
 import Back from '~/components/Back'
-const md = require('markdown-it')({ breaks: true })
+import markdown from '~/custom/markdown'
 const contentfulClient = createClient()
 
 export default {
@@ -24,7 +24,7 @@ export default {
       const info = response.items[0]
       return {
         info,
-        renderedContent: md.render(info.fields.content)
+        renderedContent: markdown(info.fields.content)
       }
     })
   }

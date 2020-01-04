@@ -1,34 +1,12 @@
 <template>
   <section>
     <Projects :projects="projects" />
-    <Flash v-for="flash in news" :key="flash.id" :flash="flash" />
-    <Job v-for="job in jobs" :key="job.id" :job="job" />
+    <aside class="flash-n-jobs">
+      <Flash v-for="flash in news" :key="flash.id" :flash="flash" />
+      <Job v-for="job in jobs" :key="job.id" :job="job" />
+    </aside>
   </section>
 </template>
-
-<style lang="scss">
-.letter {
-  display: inline-block;
-  width: 1em;
-}
-
-address {
-  font-style: normal;
-  font-variant-numeric: tabular-nums;
-  margin-left: 7.9rem;
-  margin-top: 4rem;
-
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
-}
-
-h1,
-h2 {
-  font-weight: bold;
-}
-</style>
 
 <script>
 import Projects from '~/components/Projects'
@@ -59,3 +37,11 @@ export default {
   }
 }
 </script>
+
+<style lang="sass">
+@import '~/assets/settings.scss'
+
+.flash-n-jobs
+  position: fixed
+  bottom: 3 * $leading
+</style>

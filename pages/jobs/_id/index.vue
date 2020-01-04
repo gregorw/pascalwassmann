@@ -9,7 +9,7 @@
 <script>
 import { createClient } from '~/plugins/contentful'
 import Back from '~/components/Back'
-const md = require('markdown-it')({ breaks: true })
+import markdown from '~/custom/markdown'
 
 const contentful = createClient()
 
@@ -29,7 +29,7 @@ export default {
   },
   computed: {
     fulltext () {
-      return md.render(this.job.fields.profile)
+      return markdown(this.job.fields.profile)
     }
   }
 }
