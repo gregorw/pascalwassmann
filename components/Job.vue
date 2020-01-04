@@ -1,6 +1,6 @@
 <template>
   <nuxt-link :to="'/jobs/' + job.fields.slug" class="job-link">
-    <h2>{{ job.fields.title }}</h2>
+    <h2>{{ job.fields.initiation }} {{ job.fields.title }}</h2>
     <p>{{ job.fields.subtitle }} →</p>
   </nuxt-link>
 </template>

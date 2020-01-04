@@ -23,20 +23,21 @@ export default {
 
 html {
   font-family: 'Messina Sans', -apple-system, sans-serif;
-  font-size: 16px;
+  font-size: percentage(18 / 16);
+  text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
 
-  @media only screen and (max-width: 1000px) { font-size: 14px; }
-  @media only screen and (max-width: 600px) { font-size: 12px; }
+  @media only screen and (max-width: 1000px) { font-size: percentage(16 / 16); }
+  @media only screen and (max-width: 600px) { font-size: percentage(14 / 16); }
 }
 
-main {
-  padding-bottom: 5rem;
-}
+main { padding-bottom: 5rem; }
+
+.page { padding-top: $leading; }
 
 .grid {
   max-width: 90%;
@@ -58,7 +59,7 @@ main {
 *:after {
   box-sizing: border-box;
   margin: 0;
-  font-size: 100%;
+  font-size: 1rem;
 }
 
 ol,

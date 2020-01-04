@@ -1,5 +1,5 @@
 <template>
-  <div class="page-component">
+  <div class="page">
     <Back />
     <h1>{{ job.fields.title }}</h1>
     <div v-html="fulltext" />

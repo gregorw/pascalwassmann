@@ -1,11 +1,16 @@
 <template>
-  <a class="back" @click="$router.go(-1)">←</a>
+  <nuxt-link class="back" :to="'/'">
+    ←
+  </nuxt-link>
 </template>
 
 <style lang="sass">
+@import '~/assets/settings'
+
 a.back
-  padding: 2rem 0
   font-size: 2rem
+  text-align: right
   display: block
   cursor: pointer
+  margin-bottom: $leading
 </style>

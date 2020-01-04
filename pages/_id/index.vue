@@ -1,5 +1,5 @@
 <template>
-  <div class="page-component">
+  <div class="page">
     <Back />
     <h1>{{ project.fields.name }}</h1>
     <dl>
