@@ -1,7 +1,7 @@
 <template>
   <section>
     <Projects :projects="projects" />
-    <p v-for="flash in news" :key="flash.id">{{ flash.fields.title }}</p>
+    <Flash v-for="flash in news" :key="flash.id" :flash="flash" />
     <Job v-for="job in jobs" :key="job.id" :job="job" />
   </section>
 </template>
@@ -33,6 +33,7 @@ h2 {
 <script>
 import Projects from '~/components/Projects'
 import Job from '~/components/Job'
+import Flash from '~/components/Flash'
 import { createClient } from '~/plugins/contentful'
 
 const contentful = createClient()
@@ -40,7 +41,8 @@ const contentful = createClient()
 export default {
   components: {
     Projects,
-    Job
+    Job,
+    Flash
   },
   asyncData ({ env }) {
     return Promise.all([

@@ -1,13 +1,13 @@
 <template>
-  <aside class="job">
-    <h2>{{ job.fields.title }}</h2>
+  <aside class="flash">
+    <h2>{{ flash.fields.title }}</h2>
   </aside>
 </template>
 
 <script>
 export default {
   props: {
-    job: {
+    flash: {
       type: Object,
       required: true
     }
