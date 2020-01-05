@@ -34,6 +34,9 @@ export default {
         jobs: jobs.items
       }
     })
+  },
+  mounted () {
+    document.documentElement.style.setProperty('--inner-height', `${window.innerHeight}px`)
   }
 }
 </script>
@@ -44,7 +47,8 @@ export default {
 .full-height
   display: flex
   flex-direction: column
-  min-height: calc(100vh - #{$footer-height})
+  min-height: calc(100vh - #{$footer-height}) // Fallback for browsers that do not support Custom Properties
+  min-height: calc(var(--inner-height, 100vh) - #{$footer-height})
 
 .flex-height
   flex: 1
