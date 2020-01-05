@@ -90,6 +90,19 @@ dl {
   margin-bottom: $leading;
 }
 
+h3 + p {
+  // margin-top: - $leading / 2;
+}
+
+p + h3 {
+  margin-top: 3 * $leading / 2;
+}
+
+p {
+  max-width: 36em;
+  hyphens: auto;
+}
+
 *:last-child {
   margin-bottom: 0;
 }
