@@ -36,7 +36,10 @@ export default {
     })
   },
   mounted () {
-    document.documentElement.style.setProperty('--inner-height', `${window.innerHeight}px`)
+    if (navigator.userAgent.match(/mobile/i)) {
+      document.documentElement.classList.add('mobile')
+      document.documentElement.style.setProperty('--inner-height', `${window.innerHeight}px`)
+    }
   }
 }
 </script>
@@ -48,7 +51,9 @@ export default {
   display: flex
   flex-direction: column
   min-height: calc(100vh - #{$footer-height}) // Fallback for browsers that do not support Custom Properties
-  min-height: calc(var(--inner-height, 100vh) - #{$footer-height})
+
+  .mobile &
+    min-height: calc(var(--inner-height, 100vh) - #{$footer-height})
 
 .flex-height
   flex: 1
