@@ -4,9 +4,8 @@
     <h1>{{ name }}</h1>
     <dl>
       <Definition term="Verfahren" :text="proceeding_and_rank" />
-      <Definition term="Bauingenieur" :text="bauingenieur" />
+      <Definition term="Statik" :text="bauingenieur" />
       <Definition term="Landschaftsarchitektur" :text="landschaftsarchitektur" />
-      <Definition term="Statik" :text="statik" />
       <Definition term="Gebäudetechnik" :text="gebudetechnik" />
       <Definition term="Bauphysik" :text="bauphysik" />
       <Definition term="Zusammenarbeit" :text="zusammenarbeit" />
@@ -45,7 +44,6 @@ export default {
     return {
       bauingenieur: '',
       landschaftsarchitektur: '',
-      statik: '',
       gebudetechnik: '',
       bauphysik: '',
       zusammenarbeit: '',
