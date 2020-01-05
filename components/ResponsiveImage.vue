@@ -1,10 +1,15 @@
 <template>
-  <img :key="image.id" :data-src="responsive_url" class="cld-responsive">
+  <img :key="image.id" :data-src="responsive_url" :src="url" class="cld-responsive">
 </template>
 
 <script>
 import cloudinary from 'cloudinary-core'
-const cl = new cloudinary.Cloudinary({ cloud_name: 'pw', secure: true })
+const cl = new cloudinary.Cloudinary({
+  cloud_name: 'pw',
+  secure: true,
+  type: 'fetch',
+  fetch_format: 'auto'
+})
 
 export default {
   name: 'ResponsiveImage',
@@ -15,9 +20,14 @@ export default {
     }
   },
   computed: {
+    url () {
+      return cl.url(this.secure_url, {
+        width: '200', crop: 'scale'
+      })
+    },
     responsive_url () {
       return cl.url(this.secure_url, {
-        type: 'fetch', width: 'auto', dpr: 'auto', responsive: 'true', crop: 'limit', fetch_format: 'auto'
+        width: 'auto', dpr: 'auto', responsive: 'true', crop: 'limit'
       })
     },
     secure_url () {
