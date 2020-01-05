@@ -3,7 +3,7 @@
     <ol role="menu">
       <li v-for="project in projects" :key="project.id">
         <nuxt-link :to="'/projekte/' + project.fields.slug" role="menuitem" class="project-link">
-          {{ project.fields.name }}
+          <h1>{{ project.fields.name }}</h1>
         </nuxt-link>
       </li>
     </ol>
@@ -26,8 +26,7 @@ export default {
   @import '~/assets/_settings'
 
   .project-link
-    font-weight: bold
-    font-size: 2rem
+    display: block
 
   nav.projects
     padding-top: $leading

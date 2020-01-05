@@ -70,7 +70,13 @@ a {
 
 // Typography
 html { line-height: $line-height; }
-h1 { font-size: 2rem; margin-bottom: 2 * $leading; }
+h1 {
+  font-size: 2rem;
+  margin-bottom: 2 * $leading;
+
+  @media only screen and (max-width: 1000px) { font-size: 1.8rem; }
+  @media only screen and (max-width: 600px) { font-size: 1.5rem; }
+}
 
 h1,
 h2,
