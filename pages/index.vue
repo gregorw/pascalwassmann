@@ -39,7 +39,7 @@ export default {
 </script>
 
 <style lang="sass">
-@import '~/assets/settings'
+@import '~/assets/_settings'
 
 .full-height
   display: flex
