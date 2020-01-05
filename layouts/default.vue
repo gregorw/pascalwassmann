@@ -75,7 +75,7 @@ h1 {
   margin-bottom: 2 * $leading;
 
   @media only screen and (max-width: 1000px) { font-size: 1.8rem; }
-  @media only screen and (max-width: 600px) { font-size: 1.5rem; }
+  @media only screen and (max-width: 600px) { font-size: 1.3rem; }
 }
 
 h1,
