@@ -1,5 +1,5 @@
 import pkg from './package'
-import { createClient } from './plugins/contentful'
+import createClient from './plugins/contentful'
 require('dotenv').config()
 
 const contentful = createClient()

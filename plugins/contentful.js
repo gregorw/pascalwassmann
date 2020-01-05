@@ -7,6 +7,4 @@ function createClient () {
   })
 }
 
-export {
-  createClient
-}
+export default createClient

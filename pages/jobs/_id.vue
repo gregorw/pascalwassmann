@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import { createClient } from '~/plugins/contentful'
+import createClient from '~/plugins/contentful'
 import Back from '~/components/Back'
 import markdown from '~/custom/markdown'
 

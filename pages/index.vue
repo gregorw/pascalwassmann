@@ -12,7 +12,7 @@
 import Projects from '~/components/Projects'
 import Job from '~/components/Job'
 import Flash from '~/components/Flash'
-import { createClient } from '~/plugins/contentful'
+import createClient from '~/plugins/contentful'
 
 const contentful = createClient()
 

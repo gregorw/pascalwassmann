@@ -20,7 +20,7 @@
 
 <script>
 import markdown from '~/custom/markdown'
-import { createClient } from '~/plugins/contentful'
+import createClient from '~/plugins/contentful'
 import ResponsiveImage from '~/components/ResponsiveImage'
 import Back from '~/components/Back'
 import Definition from '~/components/Definition'
