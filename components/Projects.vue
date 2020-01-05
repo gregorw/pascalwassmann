@@ -23,12 +23,12 @@ export default {
 </script>
 
 <style lang="sass">
-  @import '~/assets/settings'
+  @import '~/assets/_settings'
 
   .project-link
     font-weight: bold
     font-size: 2rem
 
   nav.projects
-    padding-top: 2 * $leading
+    padding-top: $leading
 </style>

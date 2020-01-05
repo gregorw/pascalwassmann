@@ -33,8 +33,8 @@ export default {
 </script>
 
 <style lang="sass">
-@import '~/assets/settings'
-@import '~/assets/utilities'
+@import '~/assets/_settings'
+@import '~/assets/_placeholders'
 
 .inline
   display: inline-block
@@ -44,8 +44,8 @@ footer.navigation
     float: right
 
   .content
-    @extend .grid
-    @extend .top-line
+    @extend %grid
+    @extend %top-line
     padding-top: $footer-padding-top
     padding-bottom: $footer-padding-bottom
 </style>

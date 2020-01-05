@@ -5,7 +5,7 @@
 </template>
 
 <style lang="sass">
-@import '~/assets/settings'
+@import '~/assets/_settings'
 
 a.back
   font-size: 2rem

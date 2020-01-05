@@ -19,8 +19,9 @@ export default {
 
 <style lang="scss">
 @import '~/assets/fonts';
-@import '~/assets/settings';
-@import '~/assets/utilities';
+@import '~/assets/_settings';
+@import '~/assets/_placeholders';
+@import '~/assets/_utilities';
 
 html {
   font-family: 'Messina Sans', -apple-system, sans-serif;

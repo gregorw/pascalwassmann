@@ -17,12 +17,12 @@ export default {
 </script>
 
 <style lang="sass">
-@import '~/assets/settings'
-@import '~/assets/utilities'
+@import '~/assets/_settings'
+@import '~/assets/_placeholders'
 
 .job-link
-  @extend .padded
-  @extend .top-line
+  @extend %padded
+  @extend %top-line
   display: block
 
   h2
