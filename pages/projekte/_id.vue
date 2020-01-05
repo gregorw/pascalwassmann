@@ -5,9 +5,9 @@
     <dl>
       <Definition term="Verfahren" :text="proceeding_and_rank" />
       <Definition term="Bauingenieur" :text="bauingenieur" />
-      <Definition term="Landschaftsarchitekt" :text="landschaftsarchitekt" />
+      <Definition term="Landschaftsarchitektur" :text="landschaftsarchitektur" />
       <Definition term="Statik" :text="statik" />
-      <Definition term="Gebäudetechnik" :text="gebaudetechnik" />
+      <Definition term="Gebäudetechnik" :text="gebudetechnik" />
       <Definition term="Bauphysik" :text="bauphysik" />
       <Definition term="Zusammenarbeit" :text="zusammenarbeit" />
       <Definition term="Auftrageber" :text="auftraggeber" />
@@ -44,9 +44,9 @@ export default {
   data () {
     return {
       bauingenieur: '',
-      landschaftsarchitekt: '',
+      landschaftsarchitektur: '',
       statik: '',
-      gebaudetechnik: '',
+      gebudetechnik: '',
       bauphysik: '',
       zusammenarbeit: '',
       auftraggeber: '',
