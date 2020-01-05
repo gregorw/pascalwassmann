@@ -41,6 +41,18 @@ export default {
       return response.items[0].fields
     })
   },
+  data () {
+    return {
+      bauingenieur: '',
+      landschaftsarchitekt: '',
+      statik: '',
+      gebaudetechnik: '',
+      bauphysik: '',
+      zusammenarbeit: '',
+      auftraggeber: '',
+      datum: ''
+    }
+  },
   computed: {
     renderedAbstract () {
       return markdown(this.abstract)
