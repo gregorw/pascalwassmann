@@ -9,14 +9,14 @@
 $ yarn install
 
 # serve with hot reload at localhost:3000
-$ yarn run dev
+$ yarn dev
 
 # build for production and launch server
-$ yarn run build
+$ yarn build
 $ yarn start
 
 # generate static project and deploy to Github Pages
-$ yarn run deploy
+$ yarn deploy
 ```
 
 For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).

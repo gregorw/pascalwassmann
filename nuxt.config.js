@@ -1,13 +1,22 @@
 import pkg from './package'
+import createClient from './plugins/contentful'
+require('dotenv').config()
+
+const contentful = createClient()
 
 export default {
   mode: 'universal',
+
+  env: {
+    CONTENTFUL_SPACE_ID: process.env.CONTENTFUL_SPACE_ID,
+    CONTENTFUL_ACCESS_TOKEN: process.env.CONTENTFUL_ACCESS_TOKEN
+  },
 
   /*
    ** Headers of the page
    */
   head: {
-    title: pkg.name,
+    title: 'Pascal Wassmann Architekten',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -36,6 +45,8 @@ export default {
    */
   modules: ['@nuxtjs/pwa'],
 
+  buildModules: ['@nuxtjs/dotenv'],
+
   /*
    ** Build configuration
    */
@@ -43,7 +54,7 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {
+    extend (config, ctx) {
       // Run ESLint on save
       if (ctx.isDev && ctx.isClient) {
         config.module.rules.push({
@@ -53,6 +64,26 @@ export default {
           exclude: /(node_modules)/
         })
       }
+
+      if (ctx.isDev) {
+        config.devtool = ctx.isClient ? 'source-map' : 'inline-source-map'
+      }
+    }
+  },
+
+  generate: {
+    routes () {
+      return Promise.all([
+        contentful.getEntries({ 'content_type': 'project' }),
+        contentful.getEntries({ 'content_type': 'page' }),
+        contentful.getEntries({ 'content_type': 'job' })
+      ]).then(([projects, pages, jobs]) => {
+        return [
+          ...projects.items.map((project) => { return `/projekte/${project.fields.slug}` }),
+          ...pages.items.map((page) => { return `/${page.fields.slug}` }),
+          ...jobs.items.map((job) => { return `/jobs/${job.fields.slug}` })
+        ]
+      })
     }
   }
 }
