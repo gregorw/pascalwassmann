@@ -9,7 +9,7 @@
       <Definition term="Gebäudetechnik" :text="gebudetechnik" />
       <Definition term="Bauphysik" :text="bauphysik" />
       <Definition term="Zusammenarbeit" :text="zusammenarbeit" />
-      <Definition term="Auftrageber" :text="auftraggeber" />
+      <Definition term="Auftraggeber" :text="auftraggeber" />
       <Definition term="Datum" :text="datum" />
     </dl>
     <ResponsiveImage v-for="image in images" :key="image.id" :image="image" />
