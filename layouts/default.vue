@@ -1,6 +1,6 @@
 <template>
   <div>
-    <main class="grid">
+    <main class="main">
       <nuxt />
     </main>
     <Footer class="sticky" />
@@ -37,9 +37,16 @@ html {
   @media only screen and (max-width: 600px) { font-size: percentage(16 / 16); }
 }
 
-main { padding-bottom: $footer-height; }
+.main {
+  @extend %grid;
+  padding-bottom: $footer-height;
+  display: flex; // IE fix
+}
 
-.page { padding: $leading 0; }
+.page {
+  padding: $leading 0;
+  width: 100%;
+}
 
 .sticky {
   position: fixed;

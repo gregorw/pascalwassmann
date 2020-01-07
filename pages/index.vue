@@ -1,6 +1,6 @@
 <template>
   <section class="full-height">
-    <Projects :projects="projects" class="flex-height" />
+    <Projects :projects="projects" class="extended-height" />
     <aside class="flash-n-jobs">
       <Flash v-for="flash in news" :key="flash.id" :flash="flash" />
       <Job v-for="job in jobs" :key="job.id" :job="job" />
@@ -50,12 +50,13 @@ export default {
 .full-height
   display: flex
   flex-direction: column
+  width: 100%
   min-height: calc(100vh - #{$footer-height}) // Fallback for browsers that do not support Custom Properties
 
   .mobile &
     min-height: calc(var(--inner-height, 100vh) - #{$footer-height})
 
-.flex-height
+.extended-height
   flex: 1
 
 </style>
