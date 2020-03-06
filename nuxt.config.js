@@ -18,7 +18,7 @@ export default {
   head: {
     title: 'Pascal Wassmann',
     htmlAttrs: {
-      lang: 'de-CH',
+      lang: 'de-CH'
     },
     meta: [
       { charset: 'utf-8' },
