@@ -20,6 +20,9 @@ export default {
     }
   },
   computed: {
+    present () {
+      return this.image.fields !== undefined
+    },
     url () {
       return cl.url(this.secure_url, {
         width: '200', crop: 'scale'
@@ -31,6 +34,7 @@ export default {
       })
     },
     secure_url () {
+      if (!this.present) { return null }
       return `https:${this.image.fields.file.url}`
     }
   },

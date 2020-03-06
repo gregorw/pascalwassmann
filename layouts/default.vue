@@ -106,7 +106,6 @@ p + h3 {
 }
 
 p {
-  max-width: 36em;
   hyphens: auto;
 }
 
