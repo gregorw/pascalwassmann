@@ -1,15 +1,9 @@
 <template>
-  <img :key="image.id" :data-src="responsive_url" :src="url" class="cld-responsive">
+  <img v-if="present" :key="image.id" :data-src="url" class="lazy">
 </template>
 
 <script>
-import cloudinary from 'cloudinary-core'
-const cl = new cloudinary.Cloudinary({
-  cloud_name: 'pw',
-  secure: true,
-  type: 'fetch',
-  fetch_format: 'auto'
-})
+import LazyLoad from 'vanilla-lazyload'
 
 export default {
   name: 'ResponsiveImage',
@@ -24,22 +18,17 @@ export default {
       return this.image.fields !== undefined
     },
     url () {
-      return cl.url(this.secure_url, {
-        width: '200', crop: 'scale'
-      })
-    },
-    responsive_url () {
-      return cl.url(this.secure_url, {
-        width: 'auto', dpr: 'auto', responsive: 'true', crop: 'limit'
-      })
+      return `${this.secure_url}?fm=jpg&fl=progressive&w=1500`
     },
     secure_url () {
-      if (!this.present) { return null }
       return `https:${this.image.fields.file.url}`
     }
   },
   mounted: () => {
-    cl.responsive()
+    document.lazyLoad = new LazyLoad({
+      elements_selector: '.lazy',
+      use_native: true
+    })
   }
 }
 </script>
@@ -50,5 +39,17 @@ img
   margin: 0 auto 2rem
   display: block
   max-height: 90vh
+  min-height: 100px
+  opacity: 0
 
+  &:not(.initial)
+    transition: opacity 1s
+
+  &:not([src])
+    visibility: hidden
+
+  &.initial,
+  &.loaded,
+  &.error
+    opacity: 1
 </style>
