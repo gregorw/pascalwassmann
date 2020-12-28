@@ -2,7 +2,7 @@
   <div class="page">
     <Back />
     <h1>{{ title }}</h1>
-    <div v-html="renderedContent" />
+    <div>{{ renderedContent }}</div>
   </div>
 </template>
 
