@@ -2,7 +2,7 @@
   <nav class="projects">
     <ol role="menu">
       <li v-for="project in projects" :key="project.id">
-        <nuxt-link :to="'/projekte/' + project.fields.slug" role="menuitem" class="project-link">
+        <nuxt-link :to="'/projekte/' + project.fields.slug" role="menuitem" class="project-link" exact>
           <h1>{{ project.fields.name }}</h1>
         </nuxt-link>
       </li>

@@ -73,11 +73,12 @@ ul {
 a {
   text-decoration: none;
   color: black;
+}
 
-  &:hover {
-    text-decoration: underline;
-    text-underline-offset: .1em;
-  }
+a:hover,
+.nuxt-link-exact-active {
+  text-decoration: underline;
+  text-underline-offset: .1em;
 }
 
 // Typography
