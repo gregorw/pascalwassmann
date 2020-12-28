@@ -2,7 +2,7 @@
   <div class="page">
     <Back />
     <h1>{{ job.fields.title }}</h1>
-    <div>{{ fulltext }}</div>
+    <div v-html="fulltext" />
   </div>
 </template>
 

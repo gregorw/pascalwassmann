@@ -14,7 +14,7 @@
       <Definition term="Datum" :text="datum" />
     </dl>
     <ResponsiveImage v-for="image in images" :key="image.id" :image="image" />
-    <div>{{ renderedAbstract }}</div>
+    <div v-html="renderedAbstract" />
   </div>
 </template>
 
