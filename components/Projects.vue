@@ -1,13 +1,13 @@
 <template>
   <nav class="projects">
     <ol role="menu">
-      <li v-for="project in projects" :key="project.id">
+      <li v-for="project in projects" :key="project.id" @mouseover="activeProject = project" @mouseleave="activeProject = null">
         <nuxt-link :to="'/projekte/' + project.fields.slug" role="menuitem" class="project-link" exact>
           <h1>{{ project.fields.name }}</h1>
         </nuxt-link>
       </li>
     </ol>
-    <ResponsiveImage v-for="image in images" :key="image.id" :image="image" />
+    <ResponsiveImage v-if="activeImage" :image="activeImage" />
   </nav>
 </template>
 
@@ -25,9 +25,16 @@ export default {
       required: true
     }
   },
+  data () {
+    return {
+      activeProject: null
+    }
+  },
   computed: {
-    images () {
-      return this.projects.map(p => p.fields.images[0])
+    activeImage () {
+      if (this.activeProject == null) { return }
+
+      return this.activeProject.fields.images[0]
     }
   }
 }
