@@ -5,7 +5,7 @@
         <ol>
           <li v-for="(item, index) in items" :key="item.link" class="inline">
             <!-- eslint-disable vue/singleline-html-element-content-newline -->
-            <nuxt-link :to="item.link">{{ item.text }}</nuxt-link><template v-if="index < items.length - 1">,&nbsp;</template>
+            <nuxt-link :to="item.link">{{ item.text }}</nuxt-link><template v-if="index < items.length - 1">,&ensp;</template>
             <!-- eslint-enable vue/singleline-html-element-content-newline -->
           </li>
         </ol>
