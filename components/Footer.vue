@@ -1,15 +1,12 @@
 <template>
   <footer class="navigation">
     <div class="content">
-      <nuxt-link to="/">
-        {{ brand }}
-      </nuxt-link>
       <nav>
         <ol>
-          <li v-for="item in items" :key="item.link" class="inline">
-            <nuxt-link :to="item.link">
-              {{ item.text }}
-            </nuxt-link>
+          <li v-for="(item, index) in items" :key="item.link" class="inline">
+            <!-- eslint-disable vue/singleline-html-element-content-newline -->
+            <nuxt-link :to="item.link">{{ item.text }}</nuxt-link><template v-if="index < items.length - 1">,&nbsp;</template>
+            <!-- eslint-enable vue/singleline-html-element-content-newline -->
           </li>
         </ol>
       </nav>
@@ -22,9 +19,12 @@ export default {
   name: 'Footer',
   data () {
     return {
-      brand: 'Pascal Wassmann',
       items: [{
-        text: 'Info',
+        text: 'Pascal Wassmann Architekten',
+        link: '/'
+      },
+      {
+        text: 'Information',
         link: '/info'
       }]
     }
@@ -40,9 +40,6 @@ export default {
   display: inline-block
 
 footer.navigation
-  nav
-    float: right
-
   .content
     @extend %grid
     @extend %top-line
