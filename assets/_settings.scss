@@ -4,5 +4,5 @@ $leading: $line-height * 1rem;
 // Jobs, flashes, footer
 $padding: 3 / 8 * $leading;
 $footer-padding-top: $padding;
-$footer-padding-bottom: $padding;
+$footer-padding-bottom: $leading;
 $footer-height: $footer-padding-top + $leading + $footer-padding-bottom;
