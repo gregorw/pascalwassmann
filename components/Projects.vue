@@ -7,16 +7,27 @@
         </nuxt-link>
       </li>
     </ol>
+    <ResponsiveImage v-for="image in images" :key="image.id" :image="image" />
   </nav>
 </template>
 
 <script>
+import ResponsiveImage from '~/components/ResponsiveImage'
+
 export default {
   name: 'Projects',
+  components: {
+    ResponsiveImage
+  },
   props: {
     projects: {
       type: Array, // We expect an array of pages that we need for our navigation
       required: true
+    }
+  },
+  computed: {
+    images () {
+      return this.projects.map(p => p.fields.images[0])
     }
   }
 }
