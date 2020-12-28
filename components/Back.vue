@@ -9,4 +9,7 @@ a.back
   text-align: right
   cursor: pointer
   float: right
+
+  &:hover
+    text-decoration: underline
 </style>

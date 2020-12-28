@@ -51,5 +51,5 @@ export default {
 
   nav.projects
     padding-top: $leading
-    line-heigh: 1.2
+    line-height: 1.15
 </style>
