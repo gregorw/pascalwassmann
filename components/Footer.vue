@@ -42,7 +42,6 @@ export default {
 footer.navigation
   .content
     @extend %grid
-    @extend %top-line
     padding-top: $footer-padding-top
     padding-bottom: $footer-padding-bottom
 </style>
