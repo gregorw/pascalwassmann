@@ -46,9 +46,6 @@ export default {
   .project-link
     display: block
 
-    &:hover
-      text-decoration: underline
-
   nav.projects
     padding-top: $leading
     line-height: 1.15

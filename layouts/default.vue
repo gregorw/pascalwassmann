@@ -78,8 +78,6 @@ a {
 a:hover,
 .nuxt-link-exact-active {
   text-decoration: underline;
-  text-underline-offset: .1em;
-  text-decoration-thickness: 1px;
 }
 
 // Typography
