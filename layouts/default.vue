@@ -73,6 +73,11 @@ ul {
 a {
   text-decoration: none;
   color: black;
+
+  &:hover {
+    text-decoration: underline;
+    text-underline-offset: .1em;
+  }
 }
 
 // Typography
@@ -95,10 +100,6 @@ ol,
 img,
 dl {
   margin-bottom: $leading;
-}
-
-h3 + p {
-  // margin-top: - $leading / 2;
 }
 
 p + h3 {
