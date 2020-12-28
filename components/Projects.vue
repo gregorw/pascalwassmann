@@ -28,6 +28,12 @@ export default {
   .project-link
     display: block
 
+    &:hover
+      text-decoration: underline
+      // text-underline-offset: .1em
+      // text-decoration-thickness: .2em
+
   nav.projects
     padding-top: $leading
+    line-heigh: 1.2
 </style>
