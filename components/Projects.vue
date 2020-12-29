@@ -82,6 +82,7 @@ export default {
   .background-image
     position: absolute
     top: 50%
-    transform: translateY(calc(-50% + #{$footer-height} / 2))
+    left: 50%
+    transform: translate(-50%, calc(-50% + #{$footer-height} / 2))
     z-index: -1
 </style>
