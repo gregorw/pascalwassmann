@@ -25,12 +25,10 @@ export default {
     }
   },
   mounted () {
-    if (this.lazy) {
-      document.lazyLoad = new LazyLoad({
-        elements_selector: '.lazy',
-        use_native: true
-      })
-    }
+    document.lazyLoad = new LazyLoad({
+      elements_selector: '.lazy',
+      use_native: true
+    })
   }
 }
 </script>
