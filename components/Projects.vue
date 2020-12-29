@@ -1,23 +1,23 @@
 <template>
   <nav class="projects">
     <ol role="menu">
-      <li v-for="project in projects" :key="project.id" @mouseover="activeProject = project" @mouseleave="activeProject = null">
+      <li v-for="project in projects" :key="project.sys.id" @mouseover="activeProject = project" @mouseleave="activeProject = null">
         <nuxt-link :to="'/projekte/' + project.fields.slug" role="menuitem" class="project-link" exact>
-          <h1>{{ project.fields.name }}</h1>
+          <h1 class="no-margin">{{ project.fields.name }}</h1>
+          <FadedImage :image="project.fields.images[0]" :hide="activeProject != project" class="background-image" />
         </nuxt-link>
       </li>
     </ol>
-    <ResponsiveImage v-if="activeImage" :image="activeImage" class="background-image" />
   </nav>
 </template>
 
 <script>
-import ResponsiveImage from '~/components/ResponsiveImage'
+import FadedImage from '~/components/FadedImage'
 
 export default {
   name: 'Projects',
   components: {
-    ResponsiveImage
+    FadedImage
   },
   props: {
     projects: {
@@ -31,7 +31,7 @@ export default {
     }
   },
   computed: {
-    activeImage () {
+    activeFadedImage () {
       if (this.activeProject == null) { return }
 
       return this.activeProject.fields.images[0]
@@ -42,6 +42,9 @@ export default {
 
 <style lang="sass">
   @import '~/assets/_settings'
+
+  .no-margin
+    margin-bottom: 0
 
   .project-link
     display: block

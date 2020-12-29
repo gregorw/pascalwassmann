@@ -24,16 +24,18 @@ export default {
       return `https:${this.image.fields.file.url}`
     }
   },
-  mounted: () => {
-    document.lazyLoad = new LazyLoad({
-      elements_selector: '.lazy',
-      use_native: true
-    })
+  mounted () {
+    if (this.lazy) {
+      document.lazyLoad = new LazyLoad({
+        elements_selector: '.lazy',
+        use_native: true
+      })
+    }
   }
 }
 </script>
 
-<style lang="sass">
+<style lang="sass" scoped>
 img
   max-width: 100%
   margin: 0 auto 2rem
