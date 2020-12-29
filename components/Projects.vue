@@ -1,11 +1,11 @@
 <template>
   <nav class="projects">
     <ol role="menu">
-      <li v-for="project in projects" :key="project.sys.id" @mouseover="activeProject = project" @mouseleave="activeProject = null">
+      <li v-for="project in projects" :key="project.sys.id" @mouseover="activate(project)" @mouseleave="deactivate">
         <nuxt-link :to="'/projekte/' + project.fields.slug" role="menuitem" class="project-link" exact>
           <h1 class="no-margin">{{ project.fields.name }}</h1>
-          <FadedImage :image="project.fields.images[0]" :hide="activeProject != project" class="background-image" />
         </nuxt-link>
+        <FadedImage :image="project.fields.images[0]" :hide="activeProject != project" class="background-image" />
       </li>
     </ol>
   </nav>
@@ -27,14 +27,39 @@ export default {
   },
   data () {
     return {
-      activeProject: null
+      activeProject: null,
+      interval: null
     }
   },
   computed: {
-    activeFadedImage () {
-      if (this.activeProject == null) { return }
-
-      return this.activeProject.fields.images[0]
+    activeIndex () {
+      return this.projects.indexOf(this.activeProject)
+    },
+    nextIndex () {
+      return (this.activeIndex + 1) % this.projects.length
+    },
+    nextProject () {
+      return this.projects[this.nextIndex]
+    }
+  },
+  mounted () {
+    this.startSlidesow()
+  },
+  methods: {
+    activate (project) {
+      this.stopSlideshow()
+      this.activeProject = project
+    },
+    deactivate () {
+      this.startSlidesow()
+    },
+    startSlidesow () {
+      this.interval = setInterval(() => {
+        this.activeProject = this.nextProject
+      }, 4000)
+    },
+    stopSlideshow () {
+      clearInterval(this.interval)
     }
   }
 }

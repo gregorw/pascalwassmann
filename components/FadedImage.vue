@@ -35,7 +35,7 @@ export default {
 
 img
   @extend %image-size
-  transition: opacity 1s
+  transition: opacity 1.5s
 
   &.faded
     opacity: 0
