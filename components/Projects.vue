@@ -7,7 +7,7 @@
         </nuxt-link>
       </li>
     </ol>
-    <ResponsiveImage v-if="activeImage" :image="activeImage" />
+    <ResponsiveImage v-if="activeImage" :image="activeImage" class="background-image" />
   </nav>
 </template>
 
@@ -47,6 +47,13 @@ export default {
     display: block
 
   nav.projects
-    padding-top: $leading
     line-height: 1.15
+    padding-top: $leading
+    position: relative
+
+  .background-image
+    position: absolute
+    top: 50%
+    transform: translateY(calc(-50% + #{$footer-height} / 2))
+    z-index: -1
 </style>
