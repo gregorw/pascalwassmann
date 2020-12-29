@@ -34,12 +34,11 @@ export default {
 </script>
 
 <style lang="sass" scoped>
+@import '~/assets/_settings'
+@import '~/assets/_placeholders'
+
 img
-  max-width: 100%
-  margin: 0 auto 2rem
-  display: block
-  max-height: 90vh
-  min-height: 100px
+  @extend %image-size
   opacity: 0
 
   &:not(.initial)

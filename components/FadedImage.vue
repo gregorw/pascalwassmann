@@ -1,5 +1,5 @@
 <template>
-  <img v-if="present" :src="url" :class="{'hidden': hide}">
+  <img v-if="present" :src="url" :class="{'faded': hide}">
 </template>
 
 <script>
@@ -30,14 +30,13 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-  img
-    max-width: 100%
-    margin: 0 auto 2rem
-    display: block
-    max-height: 90vh
-    min-height: 100px
-    transition: opacity 1s
+@import '~/assets/_settings'
+@import '~/assets/_placeholders'
 
-    &.hidden
-      opacity: 0
+img
+  @extend %image-size
+  transition: opacity 1s
+
+  &.faded
+    opacity: 0
 </style>
