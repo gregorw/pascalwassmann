@@ -27,7 +27,7 @@ export default {
   },
   data () {
     return {
-      activeProject: null,
+      activeProject: this.projects[0],
       interval: null
     }
   },
