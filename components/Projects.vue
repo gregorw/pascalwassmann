@@ -3,7 +3,9 @@
     <ol role="menu">
       <li v-for="project in projects" :key="project.sys.id" @mouseover="activate(project)" @mouseleave="deactivate">
         <nuxt-link :to="'/projekte/' + project.fields.slug" role="menuitem" class="project-link" exact>
-          <h1 class="no-margin">{{ project.fields.name }}</h1>
+          <h1 class="no-margin">
+            {{ project.fields.name }}
+          </h1>
         </nuxt-link>
         <FadedImage :image="project.fields.images[0]" :hide="activeProject != project" class="background-image" />
       </li>

@@ -14,6 +14,7 @@
       <Definition term="Datum" :text="datum" />
     </dl>
     <ResponsiveImage v-for="image in images" :key="image.id" :image="image" />
+    <!-- eslint-disable-next-line vue/no-v-html -->
     <div v-html="renderedAbstract" />
   </div>
 </template>

@@ -2,6 +2,7 @@
   <div class="page">
     <Back />
     <h1>{{ job.fields.title }}</h1>
+    <!-- eslint-disable-next-line vue/no-v-html -->
     <div v-html="fulltext" />
   </div>
 </template>
