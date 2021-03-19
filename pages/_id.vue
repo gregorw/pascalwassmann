@@ -2,20 +2,22 @@
   <div class="page">
     <Back />
     <h1>{{ title }}</h1>
-    <div v-html="renderedContent" />
+    <RichTextRenderer :document="body" />
   </div>
 </template>
 
 <script>
+import RichTextRenderer from 'contentful-rich-text-vue-renderer'
 import createClient from '~/plugins/contentful'
 import Back from '~/components/Back'
-import markdown from '~/custom/markdown'
+
 const contentfulClient = createClient()
 
 export default {
   name: 'Page',
   components: {
-    Back
+    Back,
+    RichTextRenderer
   },
   asyncData ({ env, params }) {
     return contentfulClient.getEntries({
@@ -25,11 +27,6 @@ export default {
       const page = response.items[0]
       return page.fields
     })
-  },
-  computed: {
-    renderedContent () {
-      return markdown(this.content)
-    }
   }
 }
 </script>
