@@ -14,6 +14,15 @@ import Back from '~/components/Back'
 
 const contentfulClient = createClient()
 
+function preserveLinebreaks (text, h) {
+  if (typeof text === 'string' || text instanceof String) {
+    const preserved = text.split('\n').map(part => [part, h('br')]).flat()
+    preserved.pop() // remove last obsolete linebreak
+    return preserved
+  }
+  return text
+}
+
 export default {
   name: 'Page',
   components: {
@@ -32,17 +41,7 @@ export default {
   methods: {
     renderNodes () {
       return {
-        [BLOCKS.PARAGRAPH] (node, key, h, next) {
-          const preservedNewlines = next(node.content).map((text) => {
-            if (typeof text === 'string' || text instanceof String) {
-              const withNewlines = text.split('\n').map(part => [part, h('br')]).flat()
-              withNewlines.pop()
-              return withNewlines
-            }
-            return text
-          })
-          return h('p', preservedNewlines)
-        }
+        [BLOCKS.PARAGRAPH]: (node, _key, h, next) => h('p', next(node.content).map(text => preserveLinebreaks(text, h)))
       }
     }
   }
