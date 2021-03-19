@@ -16,9 +16,7 @@ const contentfulClient = createClient()
 
 function preserveLinebreaks (text, h) {
   if (typeof text === 'string' || text instanceof String) {
-    const preserved = text.split('\n').map(part => [part, h('br')]).flat()
-    preserved.pop() // remove last obsolete linebreak
-    return preserved
+    return text.split('\n').flatMap((part, i) => [i > 0 && h('br'), part])
   }
   return text
 }
