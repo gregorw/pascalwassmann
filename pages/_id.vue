@@ -2,20 +2,30 @@
   <div class="page">
     <Back />
     <h1>{{ title }}</h1>
-    <div v-html="renderedContent" />
+    <RichTextRenderer :document="body" :node-renderers="renderNodes()" />
   </div>
 </template>
 
 <script>
+import RichTextRenderer from 'contentful-rich-text-vue-renderer'
+import { BLOCKS } from '@contentful/rich-text-types'
 import createClient from '~/plugins/contentful'
 import Back from '~/components/Back'
-import markdown from '~/custom/markdown'
+
 const contentfulClient = createClient()
+
+function preserveLinebreaks (text, h) {
+  if (typeof text === 'string' || text instanceof String) {
+    return text.split('\n').flatMap((part, i) => [i > 0 && h('br'), part])
+  }
+  return text
+}
 
 export default {
   name: 'Page',
   components: {
-    Back
+    Back,
+    RichTextRenderer
   },
   asyncData ({ env, params }) {
     return contentfulClient.getEntries({
@@ -26,9 +36,11 @@ export default {
       return page.fields
     })
   },
-  computed: {
-    renderedContent () {
-      return markdown(this.content)
+  methods: {
+    renderNodes () {
+      return {
+        [BLOCKS.PARAGRAPH]: (node, _key, h, next) => h('p', next(node.content).map(text => preserveLinebreaks(text, h)))
+      }
     }
   }
 }
