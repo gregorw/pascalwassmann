@@ -14,7 +14,8 @@
     "deploy": "nuxt generate && yarn push",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "fix": "eslint --ext .js,.vue --ignore-path .gitignore . --fix",
-    "precommit": "npm run lint"
+    "precommit": "npm run lint",
+    "audit:fix": "npx yarn-audit-fix"
   },
   "dependencies": {
     "@nuxtjs/pwa": "^3.0.0-beta.19",
