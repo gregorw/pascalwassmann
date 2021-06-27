@@ -38,8 +38,12 @@ export default {
 @import '~/assets/_placeholders'
 
 img
-  @extend %image-size
+  display: block
   opacity: 0
+  max-width: 100%
+  max-height: 90vh
+  min-height: 100px
+  margin: 0 auto 2rem
 
   &:not(.initial)
     transition: opacity 1s

@@ -34,9 +34,10 @@ export default {
 @import '~/assets/_placeholders'
 
 img
-  @extend %image-size
+  display: block
   transition: opacity 2s
   max-width: 90vw
+  max-height: calc(100vh - #{2 * $footer-height})
 
   &.faded
     opacity: 0
