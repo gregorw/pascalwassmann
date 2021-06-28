@@ -36,7 +36,6 @@ export default {
 img
   display: block
   transition: opacity 2s
-  width: 90vw
   max-width: 90vw
   max-height: calc(100vh - #{2 * $footer-height})
 
