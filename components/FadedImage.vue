@@ -36,8 +36,9 @@ export default {
 img
   display: block
   transition: opacity 2s
-  max-width: 90vw
-  max-height: calc(100vh - #{2 * $footer-height})
+  object-fit: contain
+  width: 80vw
+  height: 80vh
 
   &.faded
     opacity: 0
