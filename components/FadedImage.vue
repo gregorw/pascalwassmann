@@ -38,7 +38,7 @@ img
   transition: opacity 2s
   object-fit: contain
   width: 80vw
-  height: calc(100vh - #{2 * $footer-height})
+  height: 80vh
 
   &.faded
     opacity: 0
