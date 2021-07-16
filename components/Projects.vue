@@ -75,7 +75,7 @@ export default {
     display: block
 
   nav.projects
-    line-height: 1.15
+    line-height: $line-hight_title
     padding-top: $leading
     position: relative
 
