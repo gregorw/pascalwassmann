@@ -24,6 +24,7 @@ export default {
   @extend %padded
   @extend %top-line
   display: block
+  border-bottom: 1px solid red
 
   h2
     font-weight: normal
