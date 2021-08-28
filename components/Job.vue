@@ -23,8 +23,8 @@ export default {
 .job-link
   @extend %padded
   @extend %top-line
+  @extend %bottom-line
   display: block
-  border-bottom: 1px solid red
 
   h2
     font-weight: normal
