@@ -68,9 +68,10 @@ export default {
 <style lang="sass" scoped>
 .images
   overflow-x: auto
+  display: flex
+  align-items: center
   scroll-snap-type: x mandatory
   white-space: nowrap
-  vertical-align: middle
   position: fixed
   top: 100px
   scroll-padding: 50%
