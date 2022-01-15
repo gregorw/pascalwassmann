@@ -38,12 +38,14 @@ export default {
 @import '~/assets/_placeholders'
 
 img
-  display: block
+  display: inline
   opacity: 0
   max-width: 100%
-  max-height: 90vh
+  max-height: 100%
   min-height: 100px
   margin: 0 auto 2rem
+  scroll-snap-align: center
+  margin: 0 2rem
 
   &:not(.initial)
     transition: opacity 1s

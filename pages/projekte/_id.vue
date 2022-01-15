@@ -13,7 +13,9 @@
       <Definition term="Auftraggeber" :text="auftraggeber" />
       <Definition term="Datum" :text="datum" />
     </dl>
-    <ResponsiveImage v-for="image in images" :key="image.id" :image="image" />
+    <div class="images">
+      <ResponsiveImage v-for="image in images" :key="image.id" :image="image" />
+    </div>
     <div v-html="renderedAbstract" />
   </div>
 </template>
@@ -62,3 +64,18 @@ export default {
   }
 }
 </script>
+
+<style lang="sass" scoped>
+.images
+  overflow-x: auto
+  scroll-snap-type: x mandatory
+  white-space: nowrap
+  vertical-align: middle
+  position: fixed
+  top: 100px
+  scroll-padding: 50%
+  left: 0
+  width: 100vw
+  height: 80vh
+  padding: 0 5rem
+</style>
