@@ -23,8 +23,10 @@ export default {
 .job-link
   @extend %padded
   @extend %top-line
-  @extend %bottom-line
   display: block
+
+  &:last-child
+    @extend %bottom-line
 
   h2
     font-weight: normal
