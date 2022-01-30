@@ -1,8 +1,16 @@
 <template>
   <nuxt-link class="back" :to="'/'">
-    <h1>←</h1>
+    <h1>← {{ text }}</h1>
   </nuxt-link>
 </template>
+
+<script>
+export default {
+  props: {
+    text: { type: String, default: '' }
+  }
+}
+</script>
 
 <style lang="sass">
 a.back

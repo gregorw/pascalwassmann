@@ -26,11 +26,12 @@ export default {
   white-space: nowrap
   position: fixed
   top: 100px
-  scroll-padding: 50%
+  scroll-padding: 100%
   left: 0
   width: 100vw
   height: 80vh
-  padding: 0 5rem
+  padding: 0 10rem
+  z-index: -1
 
   img:last-child
     padding-right: 20vw

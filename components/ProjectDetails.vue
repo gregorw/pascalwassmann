@@ -1,7 +1,8 @@
 <template>
-  <div v-if="show">
+  <div v-if="show" class="details">
     <dl>
-      <Definition term="Verfahren" :text="project.proceeding_and_rank" />
+      <Definition term="Verfahren" :text="proceeding_and_rank" />
+      <br/>
       <Definition term="Statik" :text="project.bauingenieur" />
       <Definition term="Landschaftsarchitektur" :text="project.landschaftsarchitektur" />
       <Definition term="Gebäudetechnik" :text="project.gebudetechnik" />
@@ -50,4 +51,8 @@ export default {
 </script>
 
 <style lang="sass" scoped>
+.details
+  background-color: #fff
+  padding: 0 2rem
+  margin: 0 -2rem
 </style>
