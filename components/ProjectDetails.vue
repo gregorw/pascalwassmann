@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="show">
     <dl>
       <Definition term="Verfahren" :text="project.proceeding_and_rank" />
       <Definition term="Statik" :text="project.bauingenieur" />
@@ -11,25 +11,21 @@
       <Definition term="Auftraggeber" :text="project.auftraggeber" />
       <Definition term="Datum" :text="project.datum" />
     </dl>
-    <div class="images">
-      <ResponsiveImage v-for="image in project.images" :key="image.id" :image="image" />
-    </div>
     <div v-html="renderedAbstract" />
   </div>
 </template>
 
 <script>
 import markdown from '~/custom/markdown'
-import ResponsiveImage from '~/components/ResponsiveImage'
 import Definition from '~/components/Definition'
 
 export default {
   components: {
-    ResponsiveImage,
     Definition
   },
   props: {
-    project: { type: Object, required: true }
+    project: { type: Object, required: true },
+    show: { type: Boolean, default: false }
   },
   data () {
     return {
@@ -54,20 +50,4 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-.images
-  overflow-x: auto
-  display: flex
-  align-items: center
-  scroll-snap-type: x mandatory
-  white-space: nowrap
-  position: fixed
-  top: 100px
-  scroll-padding: 50%
-  left: 0
-  width: 100vw
-  height: 80vh
-  padding: 0 5rem
-
-  img:last-child
-    padding-right: 20vw
 </style>

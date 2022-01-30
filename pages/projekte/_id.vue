@@ -3,13 +3,15 @@
     <Back />
     <h1>{{ project.name }}</h1>
     <a @click="showDetails=true">Projektbeschrieb ➔</a>
-    <ProjectDetails :project="project" :show="showDetals" />
+    <ProjectDetails :project="project" :show="showDetails" />
+    <Slideshow :images="project.images" />
   </div>
 </template>
 
 <script>
 import createClient from '~/plugins/contentful'
 import ProjectDetails from '~/components/ProjectDetails'
+import Slideshow from '~/components/Slideshow'
 import Back from '~/components/Back'
 
 const contentfulClient = createClient()
@@ -17,7 +19,8 @@ const contentfulClient = createClient()
 export default {
   components: {
     Back,
-    ProjectDetails
+    ProjectDetails,
+    Slideshow
   },
   asyncData ({ _, params }) {
     return contentfulClient.getEntries({
@@ -29,6 +32,7 @@ export default {
   },
   data () {
     return {
+      project: { images: [] },
       showDetails: false
     }
   }
