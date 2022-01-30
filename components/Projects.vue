@@ -77,7 +77,6 @@ export default {
   nav.projects
     line-height: $line-hight_title
     padding-top: $leading
-    position: relative
 
   .background-image
     position: absolute
