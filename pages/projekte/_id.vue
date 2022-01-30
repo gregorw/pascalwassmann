@@ -1,82 +1,39 @@
 <template>
   <div class="page">
     <Back />
-    <h1>{{ name }}</h1>
-    <dl>
-      <Definition term="Verfahren" :text="proceeding_and_rank" />
-      <Definition term="Statik" :text="bauingenieur" />
-      <Definition term="Landschaftsarchitektur" :text="landschaftsarchitektur" />
-      <Definition term="Gebäudetechnik" :text="gebudetechnik" />
-      <Definition term="Bauphysik" :text="bauphysik" />
-      <Definition term="Rendering" :text="rendering" />
-      <Definition term="Zusammenarbeit" :text="zusammenarbeit" />
-      <Definition term="Auftraggeber" :text="auftraggeber" />
-      <Definition term="Datum" :text="datum" />
-    </dl>
-    <div class="images">
-      <ResponsiveImage v-for="image in images" :key="image.id" :image="image" />
-    </div>
-    <div v-html="renderedAbstract" />
+    <h1>{{ project.name }}</h1>
+    <a @click="showDetails=true">Projektbeschrieb ➔</a>
+    <ProjectDetails :project="project" :show="showDetals" />
   </div>
 </template>
 
 <script>
-import markdown from '~/custom/markdown'
 import createClient from '~/plugins/contentful'
-import ResponsiveImage from '~/components/ResponsiveImage'
+import ProjectDetails from '~/components/ProjectDetails'
 import Back from '~/components/Back'
-import Definition from '~/components/Definition'
 
 const contentfulClient = createClient()
 
 export default {
   components: {
-    ResponsiveImage,
     Back,
-    Definition
+    ProjectDetails
   },
-  asyncData ({ env, params }) {
+  asyncData ({ _, params }) {
     return contentfulClient.getEntries({
       'content_type': 'project',
       'fields.slug': params.id
     }).then((response) => {
-      return response.items[0].fields
+      return { project: response.items[0].fields }
     })
   },
   data () {
     return {
-      bauingenieur: '',
-      landschaftsarchitektur: '',
-      gebudetechnik: '',
-      bauphysik: '',
-      zusammenarbeit: '',
-      auftraggeber: '',
-      datum: ''
-    }
-  },
-  computed: {
-    renderedAbstract () {
-      return markdown(this.abstract)
-    },
-    proceeding_and_rank () {
-      return `${this.verfahren}, ${this.preis}`
+      showDetails: false
     }
   }
 }
 </script>
 
 <style lang="sass" scoped>
-.images
-  overflow-x: auto
-  display: flex
-  align-items: center
-  scroll-snap-type: x mandatory
-  white-space: nowrap
-  position: fixed
-  top: 100px
-  scroll-padding: 50%
-  left: 0
-  width: 100vw
-  height: 80vh
-  padding: 0 5rem
 </style>

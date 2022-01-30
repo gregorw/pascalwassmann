@@ -22,7 +22,7 @@ export default {
     Job,
     Flash
   },
-  asyncData ({ env }) {
+  asyncData () {
     return Promise.all([
       contentful.getEntries({ 'content_type': 'project', 'order': '-fields.projektnummer' }),
       contentful.getEntries({ 'content_type': 'newsflash' }),
