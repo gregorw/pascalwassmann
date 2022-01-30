@@ -52,6 +52,7 @@ export default {
   flex-direction: column
   width: 100%
   min-height: calc(100vh - #{$footer-height}) // Fallback for browsers that do not support Custom Properties
+  position: relative
 
   .mobile &
     min-height: calc(var(--inner-height, 100vh) - #{$footer-height})
