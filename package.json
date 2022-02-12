@@ -24,7 +24,7 @@
     "cross-env": "^6.0.3",
     "markdown-it": "^12.3.2",
     "moment": "^2.24.0",
-    "node-sass": "^4.12.0",
+    "node-sass": "^7.0.0",
     "nuxt": "^2.4.0",
     "push-dir": "^0.4.1",
     "sass-loader": "^8.0.0",
