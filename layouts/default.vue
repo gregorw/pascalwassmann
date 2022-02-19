@@ -35,6 +35,8 @@ html {
 
   @media only screen and (max-width: 1000px) { font-size: percentage(18 / 16); }
   @media only screen and (max-width: 600px) { font-size: percentage(16 / 16); }
+
+  @extend %dark;
 }
 
 .main {
@@ -55,10 +57,11 @@ html {
 .w100 { width: 100%; }
 
 .sticky {
+  background: white;
   position: fixed;
   bottom: 0;
   width: 100%;
-  background: white;
+  @media (prefers-color-scheme: dark){ background: $dark-background; }
 }
 
 // Resets
@@ -79,6 +82,8 @@ ul {
 a {
   text-decoration: none;
   color: black;
+
+  @media (prefers-color-scheme: dark) { color: $dark-color; }
 }
 
 a:hover,
