@@ -1,5 +1,5 @@
 <template>
-  <img v-if="present" :key="image.id" :data-src="url" class="lazy">
+  <img v-if="present" :key="image.id" :data-srcset="srcset" :data-src="url" class="lazy">
 </template>
 
 <script>
@@ -13,15 +13,25 @@ export default {
       required: true
     }
   },
+  data () {
+    return {
+      sizes: [600, 1200, 1800, 2400]
+    }
+  },
   computed: {
     present () {
       return this.image.fields !== undefined
     },
     url () {
-      return `${this.secure_url}?fm=jpg&fl=progressive&w=1500`
+      return `${this.secure_url}?fm=jpg&fl=progressive`
     },
     secure_url () {
       return `https:${this.image.fields.file.url}`
+    },
+    srcset () {
+      return this.sizes.map((size) => {
+        return `${this.url}&w=${size} ${size}w`
+      }).join(', ')
     }
   },
   mounted () {
@@ -43,7 +53,11 @@ img
   max-width: 80vw
   max-height: 90vh
   min-height: 100px
-  margin: 0 auto 2rem
+  margin: 0 auto 3rem
+
+  @media (max-width: 600px)
+    max-width: 100vw
+    margin-left: -1rem
 
   &:not(.initial)
     transition: opacity 1s
