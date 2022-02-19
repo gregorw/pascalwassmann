@@ -105,7 +105,8 @@ p,
 ul,
 ol,
 img,
-dl {
+dl,
+.leading {
   margin-bottom: $leading;
 }
 
