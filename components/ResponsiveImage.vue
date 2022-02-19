@@ -40,7 +40,7 @@ export default {
 img
   display: block
   opacity: 0
-  max-width: 100%
+  max-width: 80vw
   max-height: 90vh
   min-height: 100px
   margin: 0 auto 2rem

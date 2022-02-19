@@ -1,6 +1,6 @@
 <template>
   <nuxt-link class="back" :to="'/'">
-    <h1>←</h1>
+    <h1>{{ text }}</h1>
   </nuxt-link>
 </template>
 
@@ -14,3 +14,15 @@ a.back
   &:hover
     text-decoration: underline
 </style>
+
+<script>
+export default {
+  name: 'Back',
+  props: {
+    text: {
+      type: String, // We expect an array of pages that we need for our navigation
+      default: '←' // ╳
+    }
+  }
+}
+</script>

@@ -1,20 +1,24 @@
 <template>
-  <div class="page">
-    <Back />
-    <h1>{{ name }}</h1>
-    <dl>
-      <Definition term="Verfahren" :text="proceeding_and_rank" />
-      <Definition term="Statik" :text="bauingenieur" />
-      <Definition term="Landschaftsarchitektur" :text="landschaftsarchitektur" />
-      <Definition term="Gebäudetechnik" :text="gebudetechnik" />
-      <Definition term="Bauphysik" :text="bauphysik" />
-      <Definition term="Rendering" :text="rendering" />
-      <Definition term="Zusammenarbeit" :text="zusammenarbeit" />
-      <Definition term="Auftraggeber" :text="auftraggeber" />
-      <Definition term="Datum" :text="datum" />
-    </dl>
+  <div class="w100">
+    <div class="page">
+      <Back />
+      <h1>{{ name }}</h1>
+      <dl>
+        <Definition term="Verfahren" :text="proceeding_and_rank" />
+        <Definition term="Statik" :text="bauingenieur" />
+        <Definition term="Landschaftsarchitektur" :text="landschaftsarchitektur" />
+        <Definition term="Gebäudetechnik" :text="gebudetechnik" />
+        <Definition term="Bauphysik" :text="bauphysik" />
+        <Definition term="Rendering" :text="rendering" />
+        <Definition term="Zusammenarbeit" :text="zusammenarbeit" />
+        <Definition term="Auftraggeber" :text="auftraggeber" />
+        <Definition term="Datum" :text="datum" />
+      </dl>
+    </div>
     <ResponsiveImage v-for="image in images" :key="image.id" :image="image" />
-    <div v-html="renderedAbstract" />
+    <div class="page">
+      <div v-html="renderedAbstract" />
+    </div>
   </div>
 </template>
 

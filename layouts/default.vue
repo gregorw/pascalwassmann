@@ -44,9 +44,15 @@ html {
 }
 
 .page {
+  @extend %text;
   padding: $leading 0;
-  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
+
+.text { @extend %text; }
+
+.w100 { width: 100%; }
 
 .sticky {
   position: fixed;
