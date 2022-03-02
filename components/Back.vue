@@ -10,10 +10,10 @@ a.back
   cursor: pointer
   float: right
   padding-left: .5rem
+  font-family: Times, Times New Roman, serif
 
   h1
-    font-size: 2.5rem
-    line-height: 2rem * 1.15
+    font-weight: lighter
 
   &:hover
     text-decoration: none
