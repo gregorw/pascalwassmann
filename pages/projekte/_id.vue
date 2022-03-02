@@ -14,13 +14,13 @@
         <Definition term="Auftraggeber" :text="auftraggeber" />
         <Definition term="Datum" :text="datum" />
       </dl>
-      <a href="#text">Projektbeschrieb ↓</a>
+      <a href="#text">↓ Projektbeschrieb</a>
     </div>
     <ResponsiveImage v-for="image in images" :key="image.id" :image="image" />
     <div class="page" id="text">
       <div v-html="renderedAbstract" class="leading" />
       <p>
-        <a href="#top">Nach oben ↑</a>
+        <a href="#top">↑ Nach oben</a>
       </p>
     </div>
   </div>
