@@ -90,7 +90,7 @@ a:hover,
 html { line-height: $line-height; }
 h1 {
   font-size: 2rem;
-  line-height: $line-hight_title;
+  line-height: $line-height_title;
   margin-bottom: 2 * $leading;
 
   @media only screen and (max-width: 1000px) { font-size: 1.8rem; }

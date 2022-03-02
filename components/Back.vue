@@ -4,7 +4,7 @@
   </nuxt-link>
 </template>
 
-<style lang="sass">
+<style lang="sass" scoped>
 a.back
   text-align: right
   cursor: pointer

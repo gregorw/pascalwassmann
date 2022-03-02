@@ -55,9 +55,8 @@ img
   min-height: 100px
   margin: 0 auto 3rem
 
-  @media (max-width: 600px)
-    max-width: 100vw
-    margin-left: -1rem
+  @media (max-width: 50rem)
+    max-width: calc(100vw - 2rem)
 
   &:not(.initial)
     transition: opacity 1s

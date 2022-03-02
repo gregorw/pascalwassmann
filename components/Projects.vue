@@ -77,7 +77,7 @@ export default {
     display: block
 
   nav.projects
-    line-height: $line-hight_title
+    line-height: $line-height_title
     padding-top: $leading
 
   .background-image
