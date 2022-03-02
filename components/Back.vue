@@ -11,8 +11,12 @@ a.back
   float: right
   padding-left: .5rem
 
+  h1
+    font-size: 2.5rem
+    line-height: 2rem * 1.15
+
   &:hover
-    text-decoration: underline
+    text-decoration: none
 </style>
 
 <script>
@@ -21,7 +25,7 @@ export default {
   props: {
     text: {
       type: String, // We expect an array of pages that we need for our navigation
-      default: '←' // ╳
+      default: '✕' // ╳ ←
     }
   }
 }
