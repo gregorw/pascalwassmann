@@ -1,11 +1,11 @@
 <template>
   <footer class="navigation">
     <div class="content">
-      <nav>
+      <nav class="text">
         <ol>
           <li v-for="(item, index) in items" :key="item.link" class="inline">
             <!-- eslint-disable vue/singleline-html-element-content-newline -->
-            <nuxt-link :to="item.link" class="underline">{{ item.text }}</nuxt-link><template v-if="index < items.length - 1">,&ensp;</template>
+            <nuxt-link :to="item.link" class="underline bold">{{ item.text }}</nuxt-link><template v-if="index < items.length - 1">,&ensp;</template>
             <!-- eslint-enable vue/singleline-html-element-content-newline -->
           </li>
         </ol>
@@ -39,12 +39,18 @@ export default {
 .inline
   display: inline-block
 
+.bold
+  font-weight: bold
+
 .underline
   @extend %fine-underline
 
 footer.navigation
+  @extend %grid
+
   .content
-    @extend %grid
+    @extend %text
+    @extend %center
     padding-top: $footer-padding-top
     padding-bottom: $footer-padding-bottom
 </style>
