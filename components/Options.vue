@@ -45,6 +45,10 @@ export default {
         class: 'text-bg-white'
       },
       {
+        name: 'Hintergrund weiss mit Abstand',
+        class: 'text-bg-white-gap'
+      },
+      {
         name: 'Hintergrund transparent',
         class: 'text-bg-transparent'
       },

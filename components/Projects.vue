@@ -92,6 +92,11 @@ export default {
       background-color: white
       display: inline-block
 
+    .text-bg-white-gap &
+      background-color: white
+      display: inline-block
+      margin-bottom: 2px
+
     .text-bg-transparent &
       background-color: rgba(white, 0.7)
       display: inline-block
