@@ -4,15 +4,18 @@
       <nuxt />
     </main>
     <Footer class="sticky" />
+    <Options />
   </div>
 </template>
 
 <script>
 import Footer from '~/components/Footer.vue'
+import Options from '~/components/Options.vue'
 
 export default {
   components: {
-    Footer
+    Footer,
+    Options
   }
 }
 </script>
