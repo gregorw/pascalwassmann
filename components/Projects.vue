@@ -86,4 +86,22 @@ export default {
     left: 50%
     transform: translate(-50%, calc(-50% + #{$footer-height} / 2))
     z-index: -1
+
+  h1
+    .text-bg-white &
+      background-color: white
+      display: inline-block
+
+    .text-bg-transparent &
+      background-color: rgba(white, 0.7)
+      display: inline-block
+
+    .text-bg-blur &
+      background-color: rgba(white, 0.5)
+      backdrop-filter: blur(3px)
+      display: inline-block
+
+    .text-shadow-white &
+      text-shadow: 0 0 15px white
+
 </style>

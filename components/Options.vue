@@ -49,6 +49,10 @@ export default {
         class: 'text-bg-transparent'
       },
       {
+        name: 'Hintergrund verschwommen',
+        class: 'text-bg-blur'
+      },
+      {
         name: '«Schatten» weiss',
         class: 'text-shadow-white'
       }],
