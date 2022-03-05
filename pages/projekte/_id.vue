@@ -1,6 +1,6 @@
 <template>
   <div class="w100">
-    <div class="page" id="top">
+    <div id="top" class="page">
       <Back />
       <h1>{{ name }}</h1>
       <dl class="mb-0">
@@ -17,8 +17,8 @@
       <a href="#text">↓ Projektbeschrieb</a>
     </div>
     <ResponsiveImage v-for="image in images" :key="image.id" :image="image" />
-    <div class="page" id="text">
-      <div v-html="renderedAbstract" class="leading" />
+    <div id="text" class="page">
+      <div class="leading" v-html="renderedAbstract" />
       <p>
         <a href="#top">↑ Nach oben</a>
       </p>
