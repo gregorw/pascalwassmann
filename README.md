@@ -1,3 +1,4 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/ee3d77b4-5510-4cfb-801d-dbea5400ac0d/deploy-status)](https://app.netlify.com/sites/pascalwassmann/deploys)
 # pascalwassmann
 
 > Architect
