@@ -109,4 +109,7 @@ export default {
     .text-shadow-white &
       text-shadow: 0 0 15px white
 
+    .text-shadow-double-white &
+      text-shadow: 0 0 15px white, 0 0 10px white
+
 </style>

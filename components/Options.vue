@@ -1,32 +1,39 @@
 <template>
-  <aside class="options">
-    <b>Text Optionen</b>
-    <template v-for="option in options">
-      <label :key="option.class">
-        <input v-model="textOption" v-on:change="setText" :value="option.class" name="text" type="radio">
-        {{ option.name }}
-      </label>
-    </template>
-  </aside>
+  <div class="options-wrapper">
+    <aside class="options">
+      <b>Text Optionen</b>
+      <template v-for="option in options">
+        <label :key="option.class">
+          <input v-model="textOption" :value="option.class" name="text" type="radio" @change="setText">
+          {{ option.name }}
+        </label>
+      </template>
+    </aside>
+  </div>
 </template>
 
 <style lang="sass" scoped>
-.options
+.options-wrapper
   position: absolute
-  right: -19rem
+  right: 0
   top: 0
   bottom: 0
+  overflow: hidden
+
+.options
   opacity: 0
+  transform: translateX(19rem)
   transition: all 0.3s ease-in-out
   background: rgba(black, 0.85)
   color: white
   padding: 1rem
   width: 20rem
+  height: 100%
 
   &:hover
+    transform: translateX(0rem)
     opacity: 1
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2)
-    right: 0
 
   label
     display: block
@@ -59,6 +66,10 @@ export default {
       {
         name: '«Schatten» weiss',
         class: 'text-shadow-white'
+      },
+      {
+        name: '«Schatten» doppel-weiss',
+        class: 'text-shadow-double-white'
       }],
       textOption: 'text-none'
     }
