@@ -22,6 +22,7 @@ export default {
 @import '~/assets/_settings';
 @import '~/assets/_placeholders';
 @import '~/assets/_utilities';
+@import '~/assets/_style';
 
 html {
   font-family: 'Messina Sans', -apple-system, sans-serif;
@@ -59,31 +60,6 @@ html {
   bottom: 0;
   width: 100%;
   background: white;
-}
-
-// Resets
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-  margin: 0;
-  font-size: 1rem;
-}
-
-ol,
-ul {
-  list-style-type: none;
-  padding-left: 0;
-}
-
-a {
-  text-decoration: none;
-  color: black;
-}
-
-a:hover,
-.nuxt-link-exact-active {
-  text-decoration: underline;
 }
 
 // Typography
