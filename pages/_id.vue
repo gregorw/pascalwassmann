@@ -8,7 +8,7 @@
 
 <script>
 import RichTextRenderer from 'contentful-rich-text-vue-renderer'
-import { BLOCKS } from '@contentful/rich-text-types'
+import { BLOCKS, INLINES } from '@contentful/rich-text-types'
 import createClient from '~/plugins/contentful'
 import Back from '~/components/Back'
 
@@ -39,7 +39,12 @@ export default {
   methods: {
     renderNodes () {
       return {
-        [BLOCKS.PARAGRAPH]: (node, _key, h, next) => h('p', next(node.content).map(text => preserveLinebreaks(text, h)))
+        [BLOCKS.PARAGRAPH]: (node, _, h, text) => h('p', text(node.content).map(t => preserveLinebreaks(t, h))),
+        [INLINES.ASSET_HYPERLINK]: (node, _, h, text) => {
+          const target = node.data.target.fields
+          const attributes = { domProps: { href: target.file.url, target: '_blank', title: target.title } }
+          return h('a', attributes, text(node.content))
+        }
       }
     }
   }
