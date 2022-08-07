@@ -44,6 +44,10 @@ export default {
           const target = node.data.target.fields
           const attributes = { domProps: { href: target.file.url, target: '_blank', title: target.title } }
           return h('a', attributes, text(node.content))
+        },
+        [INLINES.HYPERLINK]: (node, _, h, text) => {
+          const attributes = { domProps: { href: node.data.uri, target: '_blank' } }
+          return h('a', attributes, text(node.content))
         }
       }
     }
