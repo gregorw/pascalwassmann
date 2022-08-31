@@ -3,7 +3,7 @@
     <aside class="options">
       <b>Text Optionen</b>
       <template v-for="option in options">
-        <label :key="option.class">
+        <label :key="option.name">
           <input v-model="textOption" :value="option.class" name="text" type="radio" @change="setText">
           {{ option.name }}
         </label>
@@ -56,6 +56,14 @@ export default {
         class: 'text-bg-white-gap'
       },
       {
+        name: 'Hintergrund weiss mit Abstand, visited transparent',
+        class: ['text-bg-white-gap', 'visited-transparent']
+      },
+      {
+        name: 'Hintergrund weiss mit Abstand, visited stroke',
+        class: ['text-bg-white-gap', 'visited-stroke']
+      },
+      {
         name: 'Hintergrund transparent',
         class: 'text-bg-transparent'
       },
@@ -76,8 +84,8 @@ export default {
   },
   methods: {
     setText (event) {
-      document.body.classList.remove(...this.options.map(o => o.class))
-      document.body.classList.add(event.target.value)
+      document.body.classList.remove(...this.options.flatMap(o => o.class))
+      document.body.classList.add(...event.target.value.split(','))
     }
   }
 }

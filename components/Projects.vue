@@ -112,4 +112,14 @@ export default {
     .text-shadow-double-white &
       text-shadow: 0 0 15px white, 0 0 10px white
 
+  a:visited h1
+    .visited-transparent &
+      background-color: transparent
+
+    .visited-stroke &
+      background-color: transparent
+      -webkit-text-stroke: 1px black
+      text-stroke: 1px black
+      -webkit-text-fill-color: transparent
+      text-fill-color: transparent
 </style>
