@@ -60,8 +60,8 @@ export default {
         class: ['text-bg-white-gap', 'visited-transparent']
       },
       {
-        name: 'Hintergrund weiss mit Abstand, visited stroke',
-        class: ['text-bg-white-gap', 'visited-stroke']
+        name: 'Hintergrund weiss mit Abstand, visited strike',
+        class: ['text-bg-white-gap', 'visited-strike']
       },
       {
         name: 'Hintergrund transparent',

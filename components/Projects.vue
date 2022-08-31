@@ -112,14 +112,22 @@ export default {
     .text-shadow-double-white &
       text-shadow: 0 0 15px white, 0 0 10px white
 
-  a:visited h1
-    .visited-transparent &
-      background-color: transparent
+  .project-link:visited
+    .visited-transparent & h1
+      background-color: yellow
 
-    .visited-stroke &
-      background-color: transparent
+    .visited-strike & h1
       -webkit-text-stroke: 1px black
       text-stroke: 1px black
       -webkit-text-fill-color: transparent
       text-fill-color: transparent
+      background-color: cyan
+
+      // Doesn’t work either
+      &::before
+        content: ''
+        display: block
+        width: 5em
+        height: .1em
+        background-color: black
 </style>
