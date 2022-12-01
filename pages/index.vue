@@ -46,6 +46,12 @@ export default {
 
 <style lang="sass">
 @import '~/assets/_settings'
+@import '~/assets/_placeholders'
+
+.flash-n-jobs
+  @extend %text
+  @extend %center
+  // background-color: white
 
 .full-height
   display: flex
