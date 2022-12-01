@@ -49,9 +49,11 @@ export default {
 @import '~/assets/_placeholders'
 
 .flash-n-jobs
-  @extend %text
-  @extend %center
-  // background-color: white
+  background-color: white
+
+  > *
+    @extend %text
+    @extend %center
 
 .full-height
   display: flex
