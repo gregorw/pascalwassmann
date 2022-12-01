@@ -18,6 +18,7 @@ export default {
 </script>
 
 <style lang="scss">
+@use 'sass:math';
 @import '~/assets/fonts';
 @import '~/assets/_settings';
 @import '~/assets/_placeholders';
@@ -26,7 +27,7 @@ export default {
 
 html {
   font-family: 'Messina Sans', -apple-system, sans-serif;
-  font-size: percentage(20 / 16);
+  font-size: percentage(math.div(20, 16));
   text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -34,8 +35,8 @@ html {
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
 
-  @media only screen and (max-width: 1000px) { font-size: percentage(18 / 16); }
-  @media only screen and (max-width: 600px) { font-size: percentage(16 / 16); }
+  @media only screen and (max-width: 1000px) { font-size: percentage(math.div(18, 16)); }
+  @media only screen and (max-width: 600px) { font-size: percentage(math.div(16, 16)); }
 }
 
 .main {
@@ -87,7 +88,7 @@ dl,
 }
 
 p + h3 {
-  margin-top: 3 * $leading / 2;
+  margin-top: 3 * math.div($leading, 2);
 }
 
 p {
