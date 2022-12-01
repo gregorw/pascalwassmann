@@ -1,10 +1,12 @@
+@use 'sass:math';
+
 $line-height: 1.375;
 $line-height_title: 1.15;
 $line-width: 46rem;
 $leading: $line-height * 1rem;
 
 // Jobs, flashes, footer
-$padding: 3 / 8 * $leading;
+$padding: math.div(3, 8) * $leading;
 $footer-padding-top: $padding;
 $footer-padding-bottom: $leading;
 $footer-height: $footer-padding-top + $leading + $footer-padding-bottom;
