@@ -11,6 +11,7 @@ import RichTextRenderer from 'contentful-rich-text-vue-renderer'
 import { BLOCKS, INLINES } from '@contentful/rich-text-types'
 import createClient from '~/plugins/contentful'
 import Back from '~/components/Back'
+import ResponsiveImage from '~/components/ResponsiveImage'
 
 const contentfulClient = createClient()
 
@@ -48,6 +49,9 @@ export default {
         [INLINES.HYPERLINK]: (node, _, h, text) => {
           const attributes = { domProps: { href: node.data.uri, target: '_blank' } }
           return h('a', attributes, text(node.content))
+        },
+        [BLOCKS.EMBEDDED_ASSET]: (node) => {
+          return new ResponsiveImage({ propsData: { image: node } })
         }
       }
     }
