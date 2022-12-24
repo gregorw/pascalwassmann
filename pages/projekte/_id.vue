@@ -5,12 +5,14 @@
       <h1>{{ name }}</h1>
       <dl class="mb-0">
         <Definition term="Verfahren" :text="proceeding_and_rank" />
-        <Definition term="Statik" :text="bauingenieur" />
+        <Definition term="Zusammenarbeit" :text="zusammenarbeit" />
         <Definition term="Landschaftsarchitektur" :text="landschaftsarchitektur" />
+        <Definition term="Statik" :text="bauingenieur" />
+        <Definition term="Holzbau" :text="holzbau" />
         <Definition term="Gebäudetechnik" :text="gebudetechnik" />
         <Definition term="Bauphysik" :text="bauphysik" />
-        <Definition term="Rendering" :text="rendering" />
-        <Definition term="Zusammenarbeit" :text="zusammenarbeit" />
+        <Definition term="Brandschutz" :text="brandschutz" />
+        <Definition term="Visualisierung" :text="rendering" />
         <Definition term="Auftraggeber" :text="auftraggeber" />
         <Definition term="Datum" :text="datum" />
       </dl>
