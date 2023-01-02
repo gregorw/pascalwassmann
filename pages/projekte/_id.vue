@@ -73,7 +73,10 @@ export default {
       return markdown(this.abstract)
     },
     proceeding_and_rank () {
-      return `${this.verfahren}, ${this.preis}`
+      return [this.verfahren, this.preis]
+        .map(t => t.trim())
+        .filter(t => t)
+        .join(', ')
     }
   }
 }
