@@ -13,6 +13,7 @@
         <Definition term="Bauphysik" :text="bauphysik" />
         <Definition term="Brandschutz" :text="brandschutz" />
         <Definition term="Visualisierung" :text="rendering" />
+        <Definition term="Fotografie" :text="fotografie" />
         <Definition term="Auftraggeber" :text="auftraggeber" />
         <Definition term="Datum" :text="datum" />
       </dl>
