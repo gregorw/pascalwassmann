@@ -74,7 +74,7 @@ export default {
     },
     proceeding_and_rank () {
       return [this.verfahren, this.preis]
-        .map(t => t.trim())
+        .map(t => t?.trim())
         .filter(t => t)
         .join(', ')
     }
