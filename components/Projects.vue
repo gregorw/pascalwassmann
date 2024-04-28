@@ -1,7 +1,7 @@
 <template>
   <nav class="projects page">
     <ol role="menu">
-      <li v-for="project in projects" :key="project.sys.id" @mouseover="activate(project)" @mouseleave="deactivate">
+      <li v-for="project in projects" :key="project.sys.id" :class="{active: project == activeProject}" @mouseover="activate(project)" @mouseleave="deactivate">
         <nuxt-link :to="'/projekte/' + project.fields.slug" role="menuitem" class="project-link" exact>
           <h1 class="no-margin">
             {{ project.fields.name }}
@@ -15,6 +15,7 @@
 
 <script>
 import FadedImage from '~/components/FadedImage'
+import shuffle from '~/custom/shuffle'
 
 export default {
   name: 'Projects',
@@ -30,21 +31,23 @@ export default {
   data () {
     return {
       activeProject: this.projects[0],
-      interval: null
+      interval: null,
+      shuffled: []
     }
   },
   computed: {
     activeIndex () {
-      return this.projects.indexOf(this.activeProject)
+      return this.shuffled.indexOf(this.activeProject)
     },
     nextIndex () {
-      return (this.activeIndex + 1) % this.projects.length
+      return (this.activeIndex + 1) % this.shuffled.length
     },
     nextProject () {
-      return this.projects[this.nextIndex]
+      return this.shuffled[this.nextIndex]
     }
   },
   mounted () {
+    this.shuffled = shuffle(this.projects)
     this.startSlidesow()
   },
   methods: {
