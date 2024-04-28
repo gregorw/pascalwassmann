@@ -29,10 +29,11 @@ export default {
     }
   },
   data () {
+    const shuffled = shuffle(this.projects)
     return {
-      activeProject: this.projects[0],
-      interval: null,
-      shuffled: []
+      shuffled,
+      activeProject: shuffled[0],
+      interval: null
     }
   },
   computed: {
@@ -47,7 +48,6 @@ export default {
     }
   },
   mounted () {
-    this.shuffled = shuffle(this.projects)
     this.startSlidesow()
   },
   methods: {
