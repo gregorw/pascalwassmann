@@ -20,7 +20,7 @@ export default {
   data () {
     return {
       items: [{
-        text: 'Pascal Wassmann Architekten',
+        text: 'Pascal Wassmann',
         link: '/'
       },
       {
