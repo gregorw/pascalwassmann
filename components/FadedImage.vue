@@ -34,8 +34,8 @@ export default {
 @import '~/assets/_placeholders'
 
 img
+  @extend %fade
   display: block
-  transition: opacity 2s
   object-fit: contain
   width: 80vw
   height: 80vh

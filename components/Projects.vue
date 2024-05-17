@@ -72,12 +72,14 @@ export default {
 
 <style lang="sass">
   @import '~/assets/_settings'
+  @import '~/assets/_placeholders'
 
   .no-margin
     margin-bottom: 0
 
   .project-link
     display: block
+    position: relative
 
   nav.projects
     line-height: $line-height_title
@@ -89,4 +91,21 @@ export default {
     left: 50%
     transform: translate(-50%, calc(-50% + #{$footer-height} / 2))
     z-index: -1
+
+  li
+    a::before
+      @extend %fade
+      content: '+'
+      position: absolute
+      left: -1em
+      font-size: 2rem
+      line-height: $line-height_title
+      // font-weight: bold
+      opacity: 0
+      transition: opacity 1s
+
+    &.active
+      a::before
+        opacity: 1
+
 </style>
