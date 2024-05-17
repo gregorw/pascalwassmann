@@ -89,4 +89,48 @@ export default {
     left: 50%
     transform: translate(-50%, calc(-50% + #{$footer-height} / 2))
     z-index: -1
+
+  h1
+    .text-bg-white &
+      background-color: white
+      display: inline-block
+
+    .text-bg-white-gap &
+      background-color: white
+      display: inline-block
+      margin-bottom: 2px
+
+    .text-bg-transparent &
+      background-color: rgba(white, 0.7)
+      display: inline-block
+
+    .text-bg-blur &
+      background-color: rgba(white, 0.5)
+      backdrop-filter: blur(3px)
+      display: inline-block
+
+    .text-shadow-white &
+      text-shadow: 0 0 15px white
+
+    .text-shadow-double-white &
+      text-shadow: 0 0 15px white, 0 0 10px white
+
+  .project-link:visited
+    .visited-transparent & h1
+      background-color: yellow
+
+    .visited-strike & h1
+      -webkit-text-stroke: 1px black
+      text-stroke: 1px black
+      -webkit-text-fill-color: transparent
+      text-fill-color: transparent
+      background-color: cyan
+
+      // Doesn’t work either
+      &::before
+        content: ''
+        display: block
+        width: 5em
+        height: .1em
+        background-color: black
 </style>
